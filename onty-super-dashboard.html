@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onty Command Center — Super Dashboard</title>
+<style>
+  :root{
+    --bg:#F2EEF5;
+    --bg-paper:#FBF9FC;
+    --ink:#26192E;
+    --ink-soft:#5C4C67;
+    --taro:#6E4E88;
+    --taro-deep:#4A3160;
+    --taro-pale:#E7DEF0;
+    --gold:#C68A34;
+    --gold-pale:#F3E3C6;
+    --green:#42714F;
+    --green-pale:#DCEBDE;
+    --red:#A83B2E;
+    --red-pale:#F4DCD7;
+    --line:#D9CCE3;
+    --mono: 'JetBrains Mono','SFMono-Regular',Consolas,monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 15% 0%, #F8F2FB 0%, transparent 45%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'Georgia',ui-serif,serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Georgia',ui-serif,serif; margin:0; letter-spacing:-0.01em;}
+  p{margin:0;}
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+  .mono{font-family:var(--mono);}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  /* ===== TOP BAR ===== */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,249,252,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{max-width:1180px;margin:0 auto;padding:14px 28px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-mark{
+    width:34px;height:34px;border-radius:9px;background:var(--taro);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:var(--mono);font-weight:700;font-size:13px;
+    box-shadow:0 3px 0 var(--taro-deep);
+  }
+  .brand-name{font-size:15px;font-weight:700;letter-spacing:0.01em;}
+  .brand-sub{font-size:11px;color:var(--ink-soft);font-family:var(--mono);}
+  .topnav{display:flex;gap:22px;font-size:12.5px;font-family:var(--mono);color:var(--ink-soft);}
+  .topnav a{text-decoration:none;}
+  .topnav a:hover{color:var(--taro);}
+
+  /* ===== HERO ===== */
+  .hero{padding:64px 0 40px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--taro-deep);background:var(--taro-pale);
+    padding:6px 12px;border-radius:20px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"●";color:var(--gold);}
+  .hero h1{font-size:clamp(34px,5vw,54px);line-height:1.06;max-width:780px;font-weight:400;}
+  .hero h1 em{font-style:italic;color:var(--taro);}
+  .hero-desc{margin-top:20px;max-width:620px;font-size:16.5px;line-height:1.65;color:var(--ink-soft);}
+  .hero-meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:28px;font-family:var(--mono);font-size:12px;color:var(--ink-soft);}
+  .hero-meta b{color:var(--ink);}
+
+  /* KPI strip */
+  .kpi-strip{
+    margin-top:44px;
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    background:var(--bg-paper);
+  }
+  .kpi{padding:22px 22px;border-right:1px dashed var(--line);}
+  .kpi:last-child{border-right:none;}
+  .kpi-label{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);}
+  .kpi-value{font-size:28px;margin-top:8px;font-weight:400;}
+  .kpi-value .unit{font-size:14px;color:var(--ink-soft);}
+  .kpi-tag{margin-top:8px;font-family:var(--mono);font-size:11px;}
+  .up{color:var(--green);} .down{color:var(--red);} .flat{color:var(--gold);}
+
+  @media(max-width:760px){
+    .kpi-strip{grid-template-columns:repeat(2,1fr);}
+    .kpi{border-bottom:1px dashed var(--line);}
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  section{padding:72px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:36px;flex-wrap:wrap;}
+  .sec-tag{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--taro);margin-bottom:8px;display:block;}
+  .sec-head h2{font-size:clamp(24px,3vw,32px);font-weight:400;max-width:560px;}
+  .sec-note{font-size:13.5px;color:var(--ink-soft);max-width:340px;line-height:1.55;font-family:-apple-system,sans-serif;}
+
+  /* ===== TICKET RAIL NAV ===== */
+  .rail{border-top:2px dashed var(--line);padding-top:8px;}
+  .ticket-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  }
+  @media(max-width:900px){.ticket-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.ticket-grid{grid-template-columns:1fr;}}
+
+  .ticket{
+    position:relative;
+    background:var(--bg-paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:22px 20px 20px;
+    text-decoration:none;
+    display:flex;flex-direction:column;gap:10px;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    box-shadow:0 1px 0 var(--line);
+  }
+  .ticket::before{
+    content:"";position:absolute;top:-7px;left:24px;width:14px;height:14px;
+    background:var(--bg);border:1px solid var(--line);border-radius:50%;
+  }
+  .ticket::after{
+    content:"";position:absolute;bottom:-7px;left:24px;width:14px;height:14px;
+    background:var(--bg);border:1px solid var(--line);border-radius:50%;
+  }
+  .ticket:hover{transform:translateY(-4px);border-color:var(--taro);box-shadow:0 10px 24px -12px rgba(74,49,96,0.35);}
+  .ticket-no{font-family:var(--mono);font-size:11px;color:var(--gold);}
+  .ticket-icon{font-size:22px;}
+  .ticket h3{font-size:18px;font-weight:700;margin-top:2px;}
+  .ticket p{font-size:13px;color:var(--ink-soft);line-height:1.5;font-family:-apple-system,sans-serif;}
+  .ticket-status{
+    margin-top:auto;padding-top:12px;border-top:1px dashed var(--line);
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:var(--mono);font-size:11px;
+  }
+  .badge{padding:3px 9px;border-radius:20px;font-size:10.5px;font-weight:700;letter-spacing:0.02em;}
+  .badge-good{background:var(--green-pale);color:var(--green);}
+  .badge-warn{background:var(--gold-pale);color:#8a5a1a;}
+  .badge-alert{background:var(--red-pale);color:var(--red);}
+  .badge-live{background:var(--taro-pale);color:var(--taro-deep);}
+  .go{color:var(--taro);font-weight:700;}
+
+  /* ===== DASHBOARD SUMMARY CARDS ===== */
+  .stack{display:flex;flex-direction:column;gap:16px;}
+  .panel{
+    border:1px solid var(--line);border-radius:12px;background:var(--bg-paper);
+    padding:26px 28px;
+  }
+  .panel-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:space-between;margin-bottom:14px;}
+  .panel-title{display:flex;align-items:center;gap:12px;}
+  .panel-icon{width:38px;height:38px;border-radius:9px;background:var(--taro-pale);display:flex;align-items:center;justify-content:center;font-size:18px;}
+  .panel-title h3{font-size:19px;}
+  .panel-title span{font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+  .panel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0;}
+  @media(max-width:800px){.panel-grid{grid-template-columns:repeat(2,1fr);}}
+  .mini{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px 14px;}
+  .mini-label{font-family:var(--mono);font-size:10px;color:var(--ink-soft);text-transform:uppercase;}
+  .mini-value{font-size:19px;margin-top:4px;}
+  .mini-sub{font-family:var(--mono);font-size:10.5px;margin-top:2px;}
+  .panel-body{font-size:14.5px;line-height:1.7;color:var(--ink-soft);font-family:-apple-system,sans-serif;}
+  .panel-body b{color:var(--ink);font-weight:700;}
+  .taglist{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .tag{font-family:var(--mono);font-size:11px;background:var(--taro-pale);color:var(--taro-deep);padding:4px 10px;border-radius:20px;}
+  .tag.red{background:var(--red-pale);color:var(--red);}
+  .tag.gold{background:var(--gold-pale);color:#8a5a1a;}
+  .tag.green{background:var(--green-pale);color:var(--green);}
+  .panel-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--taro);text-decoration:none;font-weight:700;}
+  .panel-link:hover{text-decoration:underline;}
+
+  /* ===== ANALYSIS SECTION ===== */
+  .analysis-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:22px;}
+  @media(max-width:900px){.analysis-grid{grid-template-columns:1fr;}}
+  .thread{border-left:3px solid var(--taro);padding:4px 0 4px 20px;margin-bottom:24px;}
+  .thread h4{font-size:15.5px;margin-bottom:6px;}
+  .thread p{font-size:14px;color:var(--ink-soft);line-height:1.65;font-family:-apple-system,sans-serif;}
+  .side-panel{background:var(--taro-deep);color:#F3EFF8;border-radius:14px;padding:28px;}
+  .side-panel h4{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#C9B3DE;margin-bottom:16px;}
+  .risk-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.14);font-size:13.5px;}
+  .risk-row:last-child{border-bottom:none;}
+  .risk-score{font-family:var(--mono);font-weight:700;}
+
+  /* ===== ACTION PLAN ===== */
+  .plan-list{display:flex;flex-direction:column;border-top:1px solid var(--line);}
+  .plan-item{display:grid;grid-template-columns:64px 1fr 130px;gap:20px;padding:22px 4px;border-bottom:1px solid var(--line);align-items:start;}
+  @media(max-width:700px){.plan-item{grid-template-columns:44px 1fr;}.plan-item .plan-owner{display:none;}}
+  .plan-num{font-family:var(--mono);font-size:22px;color:var(--line);font-weight:700;}
+  .plan-item.p1 .plan-num{color:var(--red);}
+  .plan-item.p2 .plan-num{color:var(--gold);}
+  .plan-item.p3 .plan-num{color:var(--taro);}
+  .plan-title{font-size:16px;font-weight:700;margin-bottom:6px;}
+  .plan-desc{font-size:13.5px;color:var(--ink-soft);line-height:1.6;font-family:-apple-system,sans-serif;}
+  .plan-owner{font-family:var(--mono);font-size:11px;color:var(--ink-soft);text-align:right;padding-top:4px;}
+  .plan-owner b{display:block;color:var(--ink);font-size:12px;}
+
+  footer{border-top:1px solid var(--line);padding:40px 0 60px;}
+  .foot-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);}
+  .foot-grid a{text-decoration:none;color:var(--ink-soft);}
+  .foot-grid a:hover{color:var(--taro);}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="brand-mark">O</div>
+      <div>
+        <div class="brand-name">Onty Command Center</div>
+        <div class="brand-sub">Super Dashboard · Pekalongan, ID</div>
+      </div>
+    </div>
+    <div class="topnav">
+      <a href="#nav">Dashboard</a>
+      <a href="#ringkasan">Ringkasan</a>
+      <a href="#analisis">Analisis</a>
+      <a href="#aksi">Rencana Aksi</a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap hero">
+  <span class="eyebrow">Konsolidasi 6 Dashboard · Update Juli 2026</span>
+  <h1>Satu layar untuk membaca<br>seluruh denyut bisnis <em>Onty</em>.</h1>
+  <p class="hero-desc">
+    Super dashboard ini merangkum data dari dashboard Sosial Media, Penjualan, Marketing, HR,
+    AI Studio, dan Kepuasan Pelanggan Onty Cake & Bakery — lengkap dengan analisis lintas-tim
+    dan rencana aksi prioritas. Klik kartu tiket di bawah untuk membuka dashboard aslinya secara langsung.
+  </p>
+  <div class="hero-meta">
+    <span>Sumber data: <b>Meta Business Suite · TikTok Studio · YouTube Studio · Google Sheets</b></span>
+    <span>Periode: <b>Jan–Jul 2026</b></span>
+    <span>Fokus bulan ini: <b>Peluncuran "Taste of Taro"</b></span>
+  </div>
+
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="kpi-label">Total Ekosistem Sosmed</div>
+      <div class="kpi-value">66.7K <span class="unit">followers/subs</span></div>
+      <div class="kpi-tag up">▲ IG jadi 74% basis audiens</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Revenue Jan–Jul · O1 + O2</div>
+      <div class="kpi-value">Rp6.3 <span class="unit">M gabungan</span></div>
+      <div class="kpi-tag up">▲ O2 +56.0% YoY · O1 +18.6% YoY</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Skor Ekosistem Sosmed</div>
+      <div class="kpi-value">86 <span class="unit">/ 100 tertinggi</span></div>
+      <div class="kpi-tag down">▼ TikTok Baking Class 10/100 — darurat</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-label">Survei Kepuasan Pelanggan</div>
+      <div class="kpi-value">299 <span class="unit">respons</span></div>
+      <div class="kpi-tag flat">● Feb–Jul 2026 · 2 lokasi</div>
+    </div>
+  </div>
+</div>
+
+<section id="nav" class="wrap rail">
+  <div class="sec-head">
+    <div>
+      <span class="sec-tag">Navigasi</span>
+      <h2>Buka dashboard masing-masing tim</h2>
+    </div>
+    <p class="sec-note">Setiap tiket terhubung langsung ke dashboard sumber (data live). Status ringkas ditampilkan di setiap tiket berdasarkan temuan terbaru.</p>
+  </div>
+
+  <div class="ticket-grid">
+
+    <a class="ticket" href="https://muslihm3.github.io/dashboard_penjualan_onty/" target="_blank" rel="noopener">
+      <span class="ticket-no">01 · SALES</span>
+      <span class="ticket-icon">📊</span>
+      <h3>Dashboard Penjualan</h3>
+      <p>Revenue harian &amp; bulanan 2 outlet, produk terlaris, dan tingkat diskon roti Jan–Jul 2026.</p>
+      <div class="ticket-status">
+        <span class="badge badge-warn">Perhatian</span>
+        <span class="go">Buka →</span>
+      </div>
+    </a>
+
+    <a class="ticket" href="https://muslihm3.github.io/dashboard_sosmed_onty/" target="_blank" rel="noopener">
+      <span class="ticket-no">02 · SOSMED</span>
+      <span class="ticket-icon">📱</span>
+      <h3>Dashboard Sosial Media</h3>
+      <p>Performa 5 akun (IG, TikTok, YouTube), analisis kompetitor, tren Google Trends, dan strategi konten.</p>
+      <div class="ticket-status">
+        <span class="badge badge-alert">Darurat</span>
+        <span class="go">Buka →</span>
+      </div>
+    </a>
+
+    <a class="ticket" href="https://muslihm3.github.io/dashboard_marketing/" target="_blank" rel="noopener">
+      <span class="ticket-no">03 · MARKETING</span>
+      <span class="ticket-icon">📣</span>
+      <h3>Papan Kendali Marketing</h3>
+      <p>Ringkasan kampanye &amp; aktivitas marketing toko, tersambung langsung ke Google Sheets tim.</p>
+      <div class="ticket-status">
+        <span class="badge badge-live">Live sheet</span>
+        <span class="go">Buka →</span>
+      </div>
+    </a>
+
+    <a class="ticket" href="https://muslihm3.github.io/dashboard_hr_onty/" target="_blank" rel="noopener">
+      <span class="ticket-no">04 · HR</span>
+      <span class="ticket-icon">🧑‍🍳</span>
+      <h3>Dashboard Kinerja Karyawan</h3>
+      <p>Kinerja dan produktivitas tim Onty Cake &amp; Bakery — data dimuat langsung dari sumbernya.</p>
+      <div class="ticket-status">
+        <span class="badge badge-live">Live sheet</span>
+        <span class="go">Buka →</span>
+      </div>
+    </a>
+
+    <a class="ticket" href="https://muslihm3.github.io/ai_studio/" target="_blank" rel="noopener">
+      <span class="ticket-no">05 · AI STUDIO</span>
+      <span class="ticket-icon">✦</span>
+      <h3>Onty AI Studio</h3>
+      <p>Ruang eksperimen AI internal — dari ide konten hingga analisis otomatis untuk kebutuhan tim.</p>
+      <div class="ticket-status">
+        <span class="badge badge-live">Live app</span>
+        <span class="go">Buka →</span>
+      </div>
+    </a>
+
+    <a class="ticket" href="https://muslihm3.github.io/dashboard_kritik_saran/" target="_blank" rel="noopener">
+      <span class="ticket-no">06 · CRM</span>
+      <span class="ticket-icon">💬</span>
+      <h3>Dasbor Kepuasan Pelanggan</h3>
+      <p>299 respons survei Feb–Jul 2026 dari 2 lokasi (Onty Resto &amp; Onty Cake), lengkap analisis AI &amp; tema kritik.</p>
+      <div class="ticket-status">
+        <span class="badge badge-live">Live sheet</span>
+        <span class="go">Buka →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section id="ringkasan" class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="sec-tag">Ringkasan</span>
+      <h2>Apa yang terjadi di tiap dashboard</h2>
+    </div>
+    <p class="sec-note">Angka di bawah diambil langsung dari dashboard Penjualan dan Sosial Media (data terkonfirmasi). Dashboard lain menyajikan data secara real-time dari Google Sheets sehingga ringkasannya bersifat struktural — buka tiket di atas untuk angka terbaru.</p>
+  </div>
+
+  <div class="stack">
+
+    <!-- SALES -->
+    <div class="panel">
+      <div class="panel-top">
+        <div class="panel-title">
+          <div class="panel-icon">📊</div>
+          <div>
+            <h3>Penjualan — Onty 1 &amp; Onty 2</h3>
+            <span>Jan–Jul 2026 · update 23 Juli 2026</span>
+          </div>
+        </div>
+        <span class="badge badge-warn">O1 perlu perhatian</span>
+      </div>
+      <div class="panel-grid">
+        <div class="mini"><div class="mini-label">Onty 1</div><div class="mini-value">Rp2.47M</div><div class="mini-sub up">Ach 100.3% · +18.6% YoY</div></div>
+        <div class="mini"><div class="mini-label">Onty 2</div><div class="mini-value">Rp3.85M</div><div class="mini-sub up">Ach 107.4% · +56.0% YoY</div></div>
+        <div class="mini"><div class="mini-label">Diskon O1</div><div class="mini-value">7.24%</div><div class="mini-sub down">4× lebih tinggi dari O2</div></div>
+        <div class="mini"><div class="mini-label">Diskon O2</div><div class="mini-value">1.73%</div><div class="mini-sub up">Benchmark SOP terbaik</div></div>
+      </div>
+      <p class="panel-body">
+        Kedua outlet tumbuh positif YoY, dengan <b>O2 tumbuh jauh lebih cepat (+56%)</b> dan jauh lebih efisien dalam produksi (diskon hanya 1.73%). O1 mencapai target namun tingkat diskon tinggi — produk <b>Chiffon Keju (47.2%)</b> dan <b>Donat Kacang (44.8%)</b> jadi beban produksi terbesar. <b>Dubai Chewy</b> adalah produk #1 secara revenue di kedua outlet (Rp14.8Jt &amp; Rp26.3Jt), sejalan dengan strategi hero-product yang juga direkomendasikan di dashboard sosial media. Kedua outlet menunjukkan <b>penurunan tajam di Juli</b> (data 19–22 hari, belum penuh sebulan) yang perlu dipantau agar tidak salah baca sebagai tren turun sesungguhnya.
+      </p>
+      <div class="taglist">
+        <span class="tag green">Dubai Chewy = produk unggulan</span>
+        <span class="tag red">Chiffon Keju: kurangi batch 30–40%</span>
+        <span class="tag gold">O2 = benchmark SOP produksi</span>
+      </div>
+      <a class="panel-link" href="https://muslihm3.github.io/dashboard_penjualan_onty/" target="_blank" rel="noopener">Lihat dashboard penjualan lengkap →</a>
+    </div>
+
+    <!-- SOSMED -->
+    <div class="panel">
+      <div class="panel-top">
+        <div class="panel-title">
+          <div class="panel-icon">📱</div>
+          <div>
+            <h3>Sosial Media — 5 Akun Ekosistem Onty</h3>
+            <span>Data Juni 2026 · strategi Juli 2026</span>
+          </div>
+        </div>
+        <span class="badge badge-alert">1 akun darurat</span>
+      </div>
+      <div class="panel-grid">
+        <div class="mini"><div class="mini-label">IG @ontycake</div><div class="mini-value">47.0K</div><div class="mini-sub up">Skor 86/100 · Sangat baik</div></div>
+        <div class="mini"><div class="mini-label">TikTok @ontycake</div><div class="mini-value">9.1K</div><div class="mini-sub down">Skor 38 · shares -56.9%</div></div>
+        <div class="mini"><div class="mini-label">YouTube</div><div class="mini-value">7.7K</div><div class="mini-sub down">Skor 40 · views -28%</div></div>
+        <div class="mini"><div class="mini-label">TT Baking Class</div><div class="mini-value">396</div><div class="mini-sub down">Skor 10 · views -97.7%</div></div>
+      </div>
+      <p class="panel-body">
+        Instagram utama tetap menjadi mesin pertumbuhan terkuat, dengan reach organik (56.3K) yang <b>melebihi jumlah followers</b> — sinyal algoritma sedang mendukung akun ini. Sebaliknya, <b>TikTok Baking Class kolaps total</b> (-97.7% views) akibat caption template berulang yang terdeteksi sebagai pola spam oleh algoritma — butuh reset konten mendesak. Google Trends mengonfirmasi kata kunci <b>"taro bun" &amp; "taro snack" berstatus Breakout di Jawa Tengah</b>, memberi Onty peluang first-mover untuk peluncuran 6 produk "Taste of Taro" bulan ini, mengikuti pola sukses kompetitor Delizia Bakery (811K views dari satu hero-product launch).
+      </p>
+      <div class="taglist">
+        <span class="tag red">TT Baking Class: reset caption &amp; format</span>
+        <span class="tag gold">YouTube: butuh ritme upload</span>
+        <span class="tag green">Taro = white space kompetitif</span>
+      </div>
+      <a class="panel-link" href="https://muslihm3.github.io/dashboard_sosmed_onty/" target="_blank" rel="noopener">Lihat dashboard sosial media lengkap →</a>
+    </div>
+
+    <!-- CRM -->
+    <div class="panel">
+      <div class="panel-top">
+        <div class="panel-title">
+          <div class="panel-icon">💬</div>
+          <div>
+            <h3>Kepuasan Pelanggan</h3>
+            <span>1 Feb – 25 Jul 2026 · 299 respons</span>
+          </div>
+        </div>
+        <span class="badge badge-live">Live sheet</span>
+      </div>
+      <p class="panel-body">
+        Dashboard ini menggabungkan survei kepuasan dari <b>dua lokasi</b> — Onty Resto (Jl. Imam Bonjol) dan Onty Cake &amp; Bakery (Jl. Toba) — mencakup tren rating mingguan, distribusi skor 1–5, perbandingan antar-outlet, tema kritik &amp; saran, serta feed ulasan otomatis dengan analisis AI. Karena data dimuat langsung dari Google Form saat halaman dibuka, angka rating &amp; tema kritik terbaru perlu dilihat langsung di dashboard — namun cakupan 299 respons dalam ~6 bulan menunjukkan tingkat partisipasi pelanggan yang cukup baik untuk dijadikan dasar keputusan operasional.
+      </p>
+      <a class="panel-link" href="https://muslihm3.github.io/dashboard_kritik_saran/" target="_blank" rel="noopener">Lihat dashboard kepuasan pelanggan →</a>
+    </div>
+
+    <!-- MARKETING + HR + AI STUDIO -->
+    <div class="panel">
+      <div class="panel-top">
+        <div class="panel-title">
+          <div class="panel-icon">📣</div>
+          <div>
+            <h3>Marketing, HR &amp; AI Studio</h3>
+            <span>Data live · Google Sheets &amp; app internal</span>
+          </div>
+        </div>
+        <span class="badge badge-live">3 dashboard live</span>
+      </div>
+      <p class="panel-body">
+        Tiga dashboard ini dirancang sebagai <b>alat kerja harian</b> tim, bukan laporan statis — Marketing terhubung ke Google Sheets bersama tim untuk melacak kampanye berjalan, HR menyajikan kinerja karyawan per periode, dan AI Studio menjadi ruang eksperimen untuk mempercepat pembuatan konten &amp; analisis. Karena kontennya berubah setiap kali dibuka, ringkasan angka tidak ditampilkan di sini agar tidak menyesatkan — gunakan tiket navigasi di atas untuk data terkini.
+      </p>
+      <div class="taglist">
+        <span class="tag">Marketing: kampanye &amp; evaluasi</span>
+        <span class="tag">HR: kinerja karyawan</span>
+        <span class="tag">AI Studio: eksperimen &amp; analisis cepat</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="analisis" class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="sec-tag">Analisis Lintas-Dashboard</span>
+      <h2>Benang merah antar data — bukan sekadar angka terpisah</h2>
+    </div>
+    <p class="sec-note">Menghubungkan temuan dari penjualan, sosial media, dan tren pasar untuk melihat gambaran bisnis secara utuh.</p>
+  </div>
+
+  <div class="analysis-grid">
+    <div>
+      <div class="thread">
+        <h4>1. Taro adalah pengganda pertumbuhan, bukan sekadar menu baru</h4>
+        <p>Data penjualan menunjukkan <b>Dubai Chewy</b> sudah menjadi produk #1 revenue di kedua outlet — bukti pola "hero-product" berhasil secara transaksi. Data sosial media memperkuat ini: kata kunci "taro bun" &amp; "taro snack" berstatus <b>Breakout di Jawa Tengah</b> dan kompetitor Delizia membuktikan satu hero-product bisa raih 811K views. Artinya peluncuran "Taste of Taro" berpotensi mengulang sukses Dubai Chewy di penjualan sekaligus sukses jangkauan di sosial media — dua dashboard yang berbeda mengonfirmasi arah strategi yang sama.</p>
+      </div>
+      <div class="thread">
+        <h4>2. Ketidakefisienan operasional O1 butuh perhatian sebelum scale-up konten</h4>
+        <p>O1 tumbuh (+18.6%) tapi diskon roti 7.24% — 4× lebih tinggi dari O2. Jika konten Taro dari sosial media berhasil mendorong permintaan lebih besar ke O1 tanpa perbaikan SOP produksi (mencontoh efisiensi O2 di 1.73%), potensi kenaikan diskon &amp; pemborosan produksi ikut membesar. <b>Perbaikan SOP produksi sebaiknya berjalan paralel</b> dengan kampanye Taro, bukan setelahnya.</p>
+      </div>
+      <div class="thread">
+        <h4>3. Kolapsnya TikTok Baking Class adalah risiko konversi ke kelas, bukan hanya soal angka sosial media</h4>
+        <p>Dashboard sosial media mencatat baking class sebagai jembatan cross-sell dari pembeli produk ke pendaftar kelas. Dengan akun TikTok-nya kolaps -97.7%, jalur konversi ini praktis terputus di kanal berdampak tinggi untuk audiens muda — memperkecil manfaat dari momentum Taro yang seharusnya bisa mendorong pendaftaran kelas "belajar bikin Taro Bun sendiri".</p>
+      </div>
+      <div class="thread">
+        <h4>4. Suara pelanggan (CRM) adalah pengecekan realitas untuk klaim pertumbuhan</h4>
+        <p>Dengan 299 respons dari dua lokasi berjalan sejak Februari, dashboard kepuasan pelanggan adalah alat penyeimbang: pertumbuhan revenue &amp; reach yang kuat di dashboard lain perlu dikonfirmasi tidak menurunkan kualitas layanan — terutama saat volume produksi naik untuk mendukung launching Taro di lima kanal sekaligus.</p>
+      </div>
+    </div>
+
+    <div class="side-panel">
+      <h4>Radar Risiko Saat Ini</h4>
+      <div class="risk-row"><span>TikTok Baking Class</span><span class="risk-score" style="color:#F2A48A">10 / 100</span></div>
+      <div class="risk-row"><span>YouTube @ontycakebakery</span><span class="risk-score" style="color:#F2C48A">40 / 100</span></div>
+      <div class="risk-row"><span>TikTok @ontycake</span><span class="risk-score" style="color:#F2C48A">38 / 100</span></div>
+      <div class="risk-row"><span>Diskon produksi O1</span><span class="risk-score" style="color:#F2C48A">7.24%</span></div>
+      <div class="risk-row"><span>Diskon produksi O2</span><span class="risk-score" style="color:#B6E3C2">1.73%</span></div>
+      <div class="risk-row"><span>Instagram @ontycake</span><span class="risk-score" style="color:#B6E3C2">86 / 100</span></div>
+      <p style="margin-top:20px;font-size:12.5px;line-height:1.6;color:#D8C9E6;font-family:-apple-system,sans-serif;">
+        Skor dari dashboard sosial media &amp; penjualan Juni 2026. Prioritaskan perbaikan pada baris merah/kuning sebelum menambah beban kampanye baru.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="aksi" class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="sec-tag">Rencana Aksi</span>
+      <h2>5 prioritas lintas-tim untuk Juli 2026</h2>
+    </div>
+    <p class="sec-note">Diurutkan berdasarkan urgensi gabungan dari seluruh dashboard, bukan hanya satu sisi bisnis.</p>
+  </div>
+
+  <div class="plan-list">
+    <div class="plan-item p1">
+      <div class="plan-num">01</div>
+      <div>
+        <div class="plan-title">Reset total TikTok @ontyfarahbakingclass</div>
+        <div class="plan-desc">Hentikan caption template berulang, terapkan formula konten 3-1-1 (edukasi-testimoni-promosi), dan pakai momentum launch Taro sebagai sinyal konten baru ke algoritma. Checkpoint evaluasi: 14 Juli 2026.</div>
+      </div>
+      <div class="plan-owner">Sosial Media<b>Mendesak</b></div>
+    </div>
+
+    <div class="plan-item p1">
+      <div class="plan-num">02</div>
+      <div>
+        <div class="plan-title">Eksekusi launch "Taste of Taro" ala hero-product Delizia</div>
+        <div class="plan-desc">Fokuskan Taro Bun sebagai hero product minggu pertama: foto reveal belah dua, urgency ("sold out" style), kode promo eksklusif — dijalankan serentak di 5 platform sesuai master content plan.</div>
+      </div>
+      <div class="plan-owner">Sosmed + Marketing<b>Prioritas Utama</b></div>
+    </div>
+
+    <div class="plan-item p2">
+      <div class="plan-num">03</div>
+      <div>
+        <div class="plan-title">Turunkan diskon produksi O1 dari 7.24% ke &lt;3%</div>
+        <div class="plan-desc">Kurangi batch produksi Chiffon Keju &amp; Donat Kacang 30–40%, atau alihkan ke sistem pre-order. Dokumentasikan &amp; replikasikan SOP efisiensi O2 (1.73%) ke O1.</div>
+      </div>
+      <div class="plan-owner">Operasional / HR<b>Prioritas Tinggi</b></div>
+    </div>
+
+    <div class="plan-item p2">
+      <div class="plan-num">04</div>
+      <div>
+        <div class="plan-title">Kembalikan ritme upload YouTube (1–2 video/minggu)</div>
+        <div class="plan-desc">Gunakan pola judul SEO terbukti ("Rahasia [Produk] Anti Gagal") untuk seri tutorial Taro, lalu potong tiap video panjang menjadi beberapa Shorts untuk distribusi tambahan.</div>
+      </div>
+      <div class="plan-owner">Sosial Media<b>Prioritas Tinggi</b></div>
+    </div>
+
+    <div class="plan-item p3">
+      <div class="plan-num">05</div>
+      <div>
+        <div class="plan-title">Pantau kepuasan pelanggan selama masa launching Taro</div>
+        <div class="plan-desc">Tinjau tren rating mingguan &amp; tema kritik-saran di dua lokasi selama Juli untuk memastikan lonjakan permintaan produk baru tidak menurunkan kualitas layanan.</div>
+      </div>
+      <div class="plan-owner">CRM / Layanan<b>Berkelanjutan</b></div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="foot-grid">
+    <span>Onty Command Center · Super Dashboard v1 · Dibuat Juli 2026</span>
+    <span>Sumber: dashboard Penjualan, Sosial Media, Marketing, HR, AI Studio, Kepuasan Pelanggan — <a href="https://github.com/muslihm3" target="_blank" rel="noopener">github.com/muslihm3</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
