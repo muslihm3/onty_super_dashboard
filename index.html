@@ -204,6 +204,56 @@
   .foot-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);}
   .foot-grid a{text-decoration:none;color:var(--ink-soft);}
   .foot-grid a:hover{color:var(--taro);}
+
+  /* ===== IN-PAGE VIEWER ===== */
+  .viewer{
+    position:fixed;inset:0;z-index:200;
+    background:var(--bg);
+    display:none;
+    flex-direction:column;
+    animation:slideup .22s ease;
+  }
+  .viewer.open{display:flex;}
+  @keyframes slideup{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .viewer-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:12px 20px;border-bottom:1px solid var(--line);
+    background:var(--bg-paper);flex-wrap:wrap;
+  }
+  .viewer-id{display:flex;align-items:center;gap:12px;min-width:0;}
+  .viewer-icon{width:32px;height:32px;border-radius:8px;background:var(--taro-pale);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .viewer-titles{min-width:0;}
+  .viewer-titles .t1{font-size:14.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .viewer-titles .t2{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .viewer-actions{display:flex;align-items:center;gap:10px;}
+  .vbtn{
+    font-family:var(--mono);font-size:11.5px;font-weight:700;
+    padding:8px 14px;border-radius:8px;border:1px solid var(--line);
+    background:var(--bg);color:var(--ink);text-decoration:none;cursor:pointer;
+    display:inline-flex;align-items:center;gap:6px;
+  }
+  .vbtn:hover{border-color:var(--taro);color:var(--taro);}
+  .vbtn.primary{background:var(--taro);color:#fff;border-color:var(--taro);}
+  .vbtn.primary:hover{background:var(--taro-deep);color:#fff;}
+  .viewer-body{flex:1;position:relative;background:#fff;}
+  .viewer-body iframe{width:100%;height:100%;border:0;display:block;}
+  .viewer-loading{
+    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    flex-direction:column;gap:10px;background:var(--bg);
+    font-family:var(--mono);font-size:12px;color:var(--ink-soft);
+  }
+  .viewer-loading .spin{
+    width:22px;height:22px;border-radius:50%;
+    border:2px solid var(--line);border-top-color:var(--taro);
+    animation:spin .7s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .viewer-fallback{
+    position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    flex-direction:column;gap:14px;text-align:center;padding:40px;background:var(--bg);
+  }
+  .viewer-fallback.show{display:flex;}
+  .viewer-fallback p{max-width:420px;font-size:13.5px;color:var(--ink-soft);line-height:1.6;font-family:-apple-system,sans-serif;}
 </style>
 </head>
 <body>
@@ -275,69 +325,69 @@
 
   <div class="ticket-grid">
 
-    <a class="ticket" href="https://muslihm3.github.io/dashboard_penjualan_onty/" target="_blank" rel="noopener">
+    <a class="ticket" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_penjualan_onty/','Dashboard Penjualan','📊')">
       <span class="ticket-no">01 · SALES</span>
       <span class="ticket-icon">📊</span>
       <h3>Dashboard Penjualan</h3>
       <p>Revenue harian &amp; bulanan 2 outlet, produk terlaris, dan tingkat diskon roti Jan–Jul 2026.</p>
       <div class="ticket-status">
         <span class="badge badge-warn">Perhatian</span>
-        <span class="go">Buka →</span>
+        <span class="go">Buka di sini →</span>
       </div>
     </a>
 
-    <a class="ticket" href="https://muslihm3.github.io/dashboard_sosmed_onty/" target="_blank" rel="noopener">
+    <a class="ticket" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_sosmed_onty/','Dashboard Sosial Media','📱')">
       <span class="ticket-no">02 · SOSMED</span>
       <span class="ticket-icon">📱</span>
       <h3>Dashboard Sosial Media</h3>
       <p>Performa 5 akun (IG, TikTok, YouTube), analisis kompetitor, tren Google Trends, dan strategi konten.</p>
       <div class="ticket-status">
         <span class="badge badge-alert">Darurat</span>
-        <span class="go">Buka →</span>
+        <span class="go">Buka di sini →</span>
       </div>
     </a>
 
-    <a class="ticket" href="https://muslihm3.github.io/dashboard_marketing/" target="_blank" rel="noopener">
+    <a class="ticket" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_marketing/','Papan Kendali Marketing','📣')">
       <span class="ticket-no">03 · MARKETING</span>
       <span class="ticket-icon">📣</span>
       <h3>Papan Kendali Marketing</h3>
       <p>Ringkasan kampanye &amp; aktivitas marketing toko, tersambung langsung ke Google Sheets tim.</p>
       <div class="ticket-status">
         <span class="badge badge-live">Live sheet</span>
-        <span class="go">Buka →</span>
+        <span class="go">Buka di sini →</span>
       </div>
     </a>
 
-    <a class="ticket" href="https://muslihm3.github.io/dashboard_hr_onty/" target="_blank" rel="noopener">
+    <a class="ticket" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_hr_onty/','Dashboard Kinerja Karyawan','🧑‍🍳')">
       <span class="ticket-no">04 · HR</span>
       <span class="ticket-icon">🧑‍🍳</span>
       <h3>Dashboard Kinerja Karyawan</h3>
       <p>Kinerja dan produktivitas tim Onty Cake &amp; Bakery — data dimuat langsung dari sumbernya.</p>
       <div class="ticket-status">
         <span class="badge badge-live">Live sheet</span>
-        <span class="go">Buka →</span>
+        <span class="go">Buka di sini →</span>
       </div>
     </a>
 
-    <a class="ticket" href="https://muslihm3.github.io/ai_studio/" target="_blank" rel="noopener">
+    <a class="ticket" href="#" onclick="openViewer(event,'https://muslihm3.github.io/ai_studio/','Onty AI Studio','✦')">
       <span class="ticket-no">05 · AI STUDIO</span>
       <span class="ticket-icon">✦</span>
       <h3>Onty AI Studio</h3>
       <p>Ruang eksperimen AI internal — dari ide konten hingga analisis otomatis untuk kebutuhan tim.</p>
       <div class="ticket-status">
         <span class="badge badge-live">Live app</span>
-        <span class="go">Buka →</span>
+        <span class="go">Buka di sini →</span>
       </div>
     </a>
 
-    <a class="ticket" href="https://muslihm3.github.io/dashboard_kritik_saran/" target="_blank" rel="noopener">
+    <a class="ticket" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_kritik_saran/','Dasbor Kepuasan Pelanggan','💬')">
       <span class="ticket-no">06 · CRM</span>
       <span class="ticket-icon">💬</span>
       <h3>Dasbor Kepuasan Pelanggan</h3>
       <p>299 respons survei Feb–Jul 2026 dari 2 lokasi (Onty Resto &amp; Onty Cake), lengkap analisis AI &amp; tema kritik.</p>
       <div class="ticket-status">
         <span class="badge badge-live">Live sheet</span>
-        <span class="go">Buka →</span>
+        <span class="go">Buka di sini →</span>
       </div>
     </a>
 
@@ -381,7 +431,7 @@
         <span class="tag red">Chiffon Keju: kurangi batch 30–40%</span>
         <span class="tag gold">O2 = benchmark SOP produksi</span>
       </div>
-      <a class="panel-link" href="https://muslihm3.github.io/dashboard_penjualan_onty/" target="_blank" rel="noopener">Lihat dashboard penjualan lengkap →</a>
+      <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_penjualan_onty/','Dashboard Penjualan','📊')">Lihat dashboard penjualan lengkap →</a>
     </div>
 
     <!-- SOSMED -->
@@ -410,7 +460,7 @@
         <span class="tag gold">YouTube: butuh ritme upload</span>
         <span class="tag green">Taro = white space kompetitif</span>
       </div>
-      <a class="panel-link" href="https://muslihm3.github.io/dashboard_sosmed_onty/" target="_blank" rel="noopener">Lihat dashboard sosial media lengkap →</a>
+      <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_sosmed_onty/','Dashboard Sosial Media','📱')">Lihat dashboard sosial media lengkap →</a>
     </div>
 
     <!-- CRM -->
@@ -428,7 +478,7 @@
       <p class="panel-body">
         Dashboard ini menggabungkan survei kepuasan dari <b>dua lokasi</b> — Onty Resto (Jl. Imam Bonjol) dan Onty Cake &amp; Bakery (Jl. Toba) — mencakup tren rating mingguan, distribusi skor 1–5, perbandingan antar-outlet, tema kritik &amp; saran, serta feed ulasan otomatis dengan analisis AI. Karena data dimuat langsung dari Google Form saat halaman dibuka, angka rating &amp; tema kritik terbaru perlu dilihat langsung di dashboard — namun cakupan 299 respons dalam ~6 bulan menunjukkan tingkat partisipasi pelanggan yang cukup baik untuk dijadikan dasar keputusan operasional.
       </p>
-      <a class="panel-link" href="https://muslihm3.github.io/dashboard_kritik_saran/" target="_blank" rel="noopener">Lihat dashboard kepuasan pelanggan →</a>
+      <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_kritik_saran/','Dasbor Kepuasan Pelanggan','💬')">Lihat dashboard kepuasan pelanggan →</a>
     </div>
 
     <!-- MARKETING + HR + AI STUDIO -->
@@ -563,6 +613,87 @@
     <span>Sumber: dashboard Penjualan, Sosial Media, Marketing, HR, AI Studio, Kepuasan Pelanggan — <a href="https://github.com/muslihm3" target="_blank" rel="noopener">github.com/muslihm3</a></span>
   </div>
 </footer>
+
+<div class="viewer" id="viewer">
+  <div class="viewer-bar">
+    <div class="viewer-id">
+      <div class="viewer-icon" id="viewerIcon">📊</div>
+      <div class="viewer-titles">
+        <div class="t1" id="viewerTitle">Dashboard</div>
+        <div class="t2" id="viewerUrl">muslihm3.github.io</div>
+      </div>
+    </div>
+    <div class="viewer-actions">
+      <a class="vbtn" id="viewerNewTab" href="#" target="_blank" rel="noopener">↗ Buka tab baru</a>
+      <button class="vbtn primary" onclick="closeViewer()">← Kembali ke Super Dashboard</button>
+    </div>
+  </div>
+  <div class="viewer-body">
+    <div class="viewer-loading" id="viewerLoading">
+      <div class="spin"></div>
+      <span>Memuat dashboard…</span>
+    </div>
+    <div class="viewer-fallback" id="viewerFallback">
+      <h3 style="font-family:Georgia,serif;font-weight:400;font-size:20px;">Dashboard tidak bisa ditampilkan di sini</h3>
+      <p>Situs ini tampaknya memblokir tampilan tersemat (embed). Gunakan tombol di bawah untuk membukanya — Anda tetap tidak perlu mencari tab secara manual, cukup satu klik.</p>
+      <a class="vbtn primary" id="viewerFallbackLink" href="#" target="_blank" rel="noopener">↗ Buka dashboard</a>
+    </div>
+    <iframe id="viewerFrame" src="" title="Dashboard viewer"></iframe>
+  </div>
+</div>
+
+<script>
+  var loadTimer = null;
+  function openViewer(e, url, title, icon){
+    if(e) e.preventDefault();
+    var viewer = document.getElementById('viewer');
+    var frame = document.getElementById('viewerFrame');
+    var loading = document.getElementById('viewerLoading');
+    var fallback = document.getElementById('viewerFallback');
+
+    document.getElementById('viewerTitle').textContent = title;
+    document.getElementById('viewerUrl').textContent = url.replace('https://','');
+    document.getElementById('viewerIcon').textContent = icon;
+    document.getElementById('viewerNewTab').href = url;
+    document.getElementById('viewerFallbackLink').href = url;
+
+    fallback.classList.remove('show');
+    loading.style.display = 'flex';
+    frame.style.visibility = 'hidden';
+    frame.src = url;
+
+    viewer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    clearTimeout(loadTimer);
+    // If the target blocks embedding (X-Frame-Options / CSP), the load event
+    // still fires but the frame stays blank — give it a moment, then assume
+    // success unless onerror already caught it.
+    loadTimer = setTimeout(function(){
+      loading.style.display = 'none';
+      frame.style.visibility = 'visible';
+    }, 4000);
+  }
+
+  function closeViewer(){
+    var viewer = document.getElementById('viewer');
+    var frame = document.getElementById('viewerFrame');
+    viewer.classList.remove('open');
+    document.body.style.overflow = '';
+    clearTimeout(loadTimer);
+    setTimeout(function(){ frame.src = ''; }, 200);
+  }
+
+  document.getElementById('viewerFrame').addEventListener('load', function(){
+    clearTimeout(loadTimer);
+    document.getElementById('viewerLoading').style.display = 'none';
+    document.getElementById('viewerFrame').style.visibility = 'visible';
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeViewer(); }
+  });
+</script>
 
 </body>
 </html>
