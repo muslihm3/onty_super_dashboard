@@ -254,6 +254,30 @@
   }
   .viewer-fallback.show{display:flex;}
   .viewer-fallback p{max-width:420px;font-size:13.5px;color:var(--ink-soft);line-height:1.6;font-family:-apple-system,sans-serif;}
+
+  /* ===== TOPBAR DASHBOARD MENU (always visible, no dropdown) ===== */
+  .dash-menu-row{
+    border-top:1px solid var(--line);
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .dash-menu-row::-webkit-scrollbar{display:none;}
+  .dash-menu-inner{
+    max-width:1180px;margin:0 auto;padding:10px 28px;
+    display:flex;align-items:center;gap:8px;white-space:nowrap;
+  }
+  .dash-menu-label{
+    font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:0.06em;
+    color:var(--ink-soft);margin-right:4px;flex-shrink:0;
+  }
+  .dash-pill{
+    display:inline-flex;align-items:center;gap:7px;flex-shrink:0;
+    padding:7px 13px;border-radius:20px;border:1px solid var(--line);
+    background:var(--bg-paper);cursor:pointer;
+    font-family:-apple-system,sans-serif;font-size:12.5px;font-weight:600;color:var(--ink);
+  }
+  .dash-pill:hover{border-color:var(--taro);color:var(--taro-deep);background:var(--taro-pale);}
+  .dash-pill .ic{font-size:13px;}
 </style>
 </head>
 <body>
@@ -268,10 +292,20 @@
       </div>
     </div>
     <div class="topnav">
-      <a href="#nav">Dashboard</a>
       <a href="#ringkasan">Ringkasan</a>
       <a href="#analisis">Analisis</a>
       <a href="#aksi">Rencana Aksi</a>
+    </div>
+  </div>
+  <div class="dash-menu-row">
+    <div class="dash-menu-inner">
+      <span class="dash-menu-label">Buka Dashboard:</span>
+      <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_penjualan_onty/','Dashboard Penjualan','📊')"><span class="ic">📊</span> Penjualan</button>
+      <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_sosmed_onty/','Dashboard Sosial Media','📱')"><span class="ic">📱</span> Sosial Media</button>
+      <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_marketing/','Papan Kendali Marketing','📣')"><span class="ic">📣</span> Marketing</button>
+      <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_hr_onty/','Dashboard Kinerja Karyawan','🧑‍🍳')"><span class="ic">🧑‍🍳</span> HR</button>
+      <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/ai_studio/','Onty AI Studio','✦')"><span class="ic">✦</span> AI Studio</button>
+      <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_kritik_saran/','Dasbor Kepuasan Pelanggan','💬')"><span class="ic">💬</span> Kepuasan Pelanggan</button>
     </div>
   </div>
 </div>
@@ -286,7 +320,7 @@
   </p>
   <div class="hero-meta">
     <span>Sumber data: <b>Meta Business Suite · TikTok Studio · YouTube Studio · Google Sheets</b></span>
-    <span>Periode: <b>Jan–Jul 2026</b></span>
+    <span>Periode: <b>Jan–Jul 2026 (update 31 Juli 2026)</b></span>
     <span>Fokus bulan ini: <b>Peluncuran "Taste of Taro"</b></span>
   </div>
 
@@ -298,8 +332,8 @@
     </div>
     <div class="kpi">
       <div class="kpi-label">Revenue Jan–Jul · O1 + O2</div>
-      <div class="kpi-value">Rp6.3 <span class="unit">M gabungan</span></div>
-      <div class="kpi-tag up">▲ O2 +56.0% YoY · O1 +18.6% YoY</div>
+      <div class="kpi-value">Rp6.53 <span class="unit">M gabungan</span></div>
+      <div class="kpi-tag up">▲ O2 +48.0% YoY · O1 +18.6% YoY</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Skor Ekosistem Sosmed</div>
@@ -412,24 +446,24 @@
           <div class="panel-icon">📊</div>
           <div>
             <h3>Penjualan — Onty 1 &amp; Onty 2</h3>
-            <span>Jan–Jul 2026 · update 23 Juli 2026</span>
+            <span>Jan–Jul 2026 (s.d. 26 Jul) · update 31 Juli 2026</span>
           </div>
         </div>
         <span class="badge badge-warn">O1 perlu perhatian</span>
       </div>
       <div class="panel-grid">
-        <div class="mini"><div class="mini-label">Onty 1</div><div class="mini-value">Rp2.47M</div><div class="mini-sub up">Ach 100.3% · +18.6% YoY</div></div>
-        <div class="mini"><div class="mini-label">Onty 2</div><div class="mini-value">Rp3.85M</div><div class="mini-sub up">Ach 107.4% · +56.0% YoY</div></div>
-        <div class="mini"><div class="mini-label">Diskon O1</div><div class="mini-value">7.24%</div><div class="mini-sub down">4× lebih tinggi dari O2</div></div>
-        <div class="mini"><div class="mini-label">Diskon O2</div><div class="mini-value">1.73%</div><div class="mini-sub up">Benchmark SOP terbaik</div></div>
+        <div class="mini"><div class="mini-label">Onty 1</div><div class="mini-value">Rp2.55M</div><div class="mini-sub up">Ach 99.6% · +18.6% YoY</div></div>
+        <div class="mini"><div class="mini-label">Onty 2</div><div class="mini-value">Rp3.98M</div><div class="mini-sub up">Ach 106.5% · +48.0% YoY</div></div>
+        <div class="mini"><div class="mini-label">Diskon O1</div><div class="mini-value">7.38%</div><div class="mini-sub down">Naik dari 7.24% bulan lalu</div></div>
+        <div class="mini"><div class="mini-label">Diskon O2</div><div class="mini-value">1.73%</div><div class="mini-sub up">Tetap jadi benchmark SOP</div></div>
       </div>
       <p class="panel-body">
-        Kedua outlet tumbuh positif YoY, dengan <b>O2 tumbuh jauh lebih cepat (+56%)</b> dan jauh lebih efisien dalam produksi (diskon hanya 1.73%). O1 mencapai target namun tingkat diskon tinggi — produk <b>Chiffon Keju (47.2%)</b> dan <b>Donat Kacang (44.8%)</b> jadi beban produksi terbesar. <b>Dubai Chewy</b> adalah produk #1 secara revenue di kedua outlet (Rp14.8Jt &amp; Rp26.3Jt), sejalan dengan strategi hero-product yang juga direkomendasikan di dashboard sosial media. Kedua outlet menunjukkan <b>penurunan tajam di Juli</b> (data 19–22 hari, belum penuh sebulan) yang perlu dipantau agar tidak salah baca sebagai tren turun sesungguhnya.
+        Kedua outlet masih tumbuh positif YoY — <b>O2 tetap unggul revenue &amp; efisiensi</b> (Rp3.98M, achievement 106.5%, diskon hanya 1.73%), sementara <b>O1 nyaris capai target (99.6%)</b> namun tingkat diskonnya justru <b>naik lagi ke 7.38%</b>, 4× lebih tinggi dari O2. Penyebab utamanya <b>Chiffon Keju</b>, yang diskonnya kini mencapai <b>69.44%</b> (naik tajam dari bulan sebelumnya) — hampir 7 dari 10 pcs yang diproduksi berakhir didiskon. Dari sisi volume, <b>Donat Mises</b> tetap jadi produk dengan produksi terbanyak di kedua outlet. Data Juli (baru 26 hari, belum penuh sebulan) menunjukkan penurunan tajam di kedua outlet — ini kemungkinan besar efek data yang belum lengkap, bukan tren penurunan riil, tapi tetap perlu dipantau ketat di update berikutnya agar tidak salah baca arah bisnis.
       </p>
       <div class="taglist">
-        <span class="tag green">Dubai Chewy = produk unggulan</span>
-        <span class="tag red">Chiffon Keju: kurangi batch 30–40%</span>
-        <span class="tag gold">O2 = benchmark SOP produksi</span>
+        <span class="tag red">Chiffon Keju 69.44% diskon — kurangi batch 30–40%</span>
+        <span class="tag gold">Donat Mises = volume produksi #1</span>
+        <span class="tag green">O2 = benchmark SOP produksi</span>
       </div>
       <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_penjualan_onty/','Dashboard Penjualan','📊')">Lihat dashboard penjualan lengkap →</a>
     </div>
@@ -644,6 +678,7 @@
 
 <script>
   var loadTimer = null;
+
   function openViewer(e, url, title, icon){
     if(e) e.preventDefault();
     var viewer = document.getElementById('viewer');
