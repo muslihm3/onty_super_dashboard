@@ -43,7 +43,7 @@
   /* ===== TOP BAR ===== */
   .topbar{
     position:sticky; top:0; z-index:50;
-    background:rgba(251,249,252,0.92);
+    background:rgba(255,252,245,0.92);
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
@@ -131,7 +131,7 @@
     content:"";position:absolute;bottom:-7px;left:24px;width:14px;height:14px;
     background:var(--bg);border:1px solid var(--line);border-radius:50%;
   }
-  .ticket:hover{transform:translateY(-4px);border-color:var(--taro);box-shadow:0 10px 24px -12px rgba(74,49,96,0.35);}
+  .ticket:hover{transform:translateY(-4px);border-color:var(--taro);box-shadow:0 10px 24px -12px rgba(138,74,18,0.35);}
   .ticket-no{font-family:var(--mono);font-size:11px;color:var(--gold);}
   .ticket-icon{font-size:22px;}
   .ticket h3{font-size:18px;font-weight:700;margin-top:2px;}
@@ -306,44 +306,45 @@
       <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_hr_onty/','Dashboard Kinerja Karyawan','🧑‍🍳')"><span class="ic">🧑‍🍳</span> HR</button>
       <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/ai_studio/','Onty AI Studio','✦')"><span class="ic">✦</span> AI Studio</button>
       <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/feedback_customer/','Dasbor Kepuasan Pelanggan','💬')"><span class="ic">💬</span> Kepuasan Pelanggan</button>
+      <button class="dash-pill" onclick="openViewer(event,'https://muslihm3.github.io/Finance_Onty/','Dashboard Keuangan','💰')"><span class="ic">💰</span> Keuangan</button>
     </div>
   </div>
 </div>
 
 <div class="wrap hero">
-  <span class="eyebrow">Konsolidasi 6 Dashboard · Update September 2026</span>
+  <span class="eyebrow">Konsolidasi 7 Dashboard · Update Oktober 2026</span>
   <h1>Satu layar untuk membaca<br>seluruh denyut bisnis <em>Onty</em>.</h1>
   <p class="hero-desc">
     Super dashboard ini merangkum data dari dashboard Sosial Media, Penjualan, Marketing, HR,
-    AI Studio, dan Kepuasan Pelanggan Onty Cake & Bakery — lengkap dengan analisis lintas-tim
+    AI Studio, Kepuasan Pelanggan, dan Keuangan Onty Cake & Bakery — lengkap dengan analisis lintas-tim
     dan rencana aksi prioritas. Klik kartu tiket di bawah untuk membuka dashboard aslinya secara langsung.
   </p>
   <div class="hero-meta">
-    <span>Sumber data: <b>Meta Business Suite · TikTok Studio · YouTube Studio · Google Sheets</b></span>
-    <span>Periode: <b>Jan–Agu 2026 (lengkap, update 14 September 2026)</b></span>
-    <span>Fokus bulan ini: <b>Peluncuran "Roti Geloong" — lanjutan pemulihan Agustus</b></span>
+    <span>Sumber data: <b>Meta Business Suite · TikTok Studio · YouTube Studio · Google Sheets · Accurate</b></span>
+    <span>Periode: <b>Semua dashboard s.d. September 2026 (Penjualan update 7 Okt · Sosmed update 9 Okt)</b></span>
+    <span>Fokus bulan ini: <b>Pemulihan Toba (O1), kinerja tim, teguran YouTube, dan peluncuran "Roti Kasur"</b></span>
   </div>
 
   <div class="kpi-strip">
     <div class="kpi">
       <div class="kpi-label">Total Ekosistem Sosmed</div>
-      <div class="kpi-value">67.6K <span class="unit">followers/subs</span></div>
-      <div class="kpi-tag up">▲ +525 vs Juli, engagement pulih total</div>
+      <div class="kpi-value">67.7K <span class="unit">followers/subs</span></div>
+      <div class="kpi-tag flat">▲ +103 vs Agustus · skor platform turun pasca-viral</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">Revenue Jan–Jul · O1 + O2</div>
-      <div class="kpi-value">Rp7.63 <span class="unit">M gabungan</span></div>
-      <div class="kpi-tag up">▲ O2 +55.0% YoY · O1 +15.0% YoY</div>
+      <div class="kpi-label">Revenue Jan–Sep · O1 + O2</div>
+      <div class="kpi-value">Rp8.59 <span class="unit">M gabungan</span></div>
+      <div class="kpi-tag flat">Ach 95.7% · O2 +55.7% YoY · O1 +13.7%</div>
     </div>
     <div class="kpi">
-      <div class="kpi-label">Skor Ekosistem Sosmed</div>
-      <div class="kpi-value">88 <span class="unit">/ 100 tertinggi</span></div>
-      <div class="kpi-tag up">▲ Pemulihan besar — TT Baking Class 4→72</div>
+      <div class="kpi-label">Laba Bersih · Sep 2026</div>
+      <div class="kpi-value">Rp356 <span class="unit">Jt · margin 27.6%</span></div>
+      <div class="kpi-tag up">▲ Net sales Rp1.29M · prime cost 62.4%</div>
     </div>
     <div class="kpi">
       <div class="kpi-label">Kepuasan Pelanggan</div>
-      <div class="kpi-value">4.86 <span class="unit">/ 5.0 · 367 respons</span></div>
-      <div class="kpi-tag up">▲ 98.6% beri skor ≥4</div>
+      <div class="kpi-value">4.86 <span class="unit">/ 5.0 · 405 respons</span></div>
+      <div class="kpi-tag up">▲ 98.8% beri skor ≥4</div>
     </div>
   </div>
 </div>
@@ -354,7 +355,7 @@
       <span class="sec-tag">Navigasi</span>
       <h2>Buka dashboard masing-masing tim</h2>
     </div>
-    <p class="sec-note">Setiap tiket terhubung langsung ke dashboard sumber (data live). Status ringkas ditampilkan di setiap tiket berdasarkan temuan terbaru.</p>
+    <p class="sec-note">Setiap tiket terhubung langsung ke dashboard sumber. Status ringkas ditampilkan di setiap tiket berdasarkan temuan terbaru.</p>
   </div>
 
   <div class="ticket-grid">
@@ -363,9 +364,9 @@
       <span class="ticket-no">01 · SALES</span>
       <span class="ticket-icon">📊</span>
       <h3>Dashboard Penjualan</h3>
-      <p>Revenue harian &amp; bulanan 2 outlet + tampilan gabungan, produk terlaris, dan tingkat diskon roti Jan–Agu 2026.</p>
+      <p>Revenue harian &amp; bulanan 2 outlet + tampilan gabungan, produk terlaris, dan tingkat diskon roti Jan–Sep 2026.</p>
       <div class="ticket-status">
-        <span class="badge badge-good">Membaik</span>
+        <span class="badge badge-warn">O1 tertinggal</span>
         <span class="go">Buka di sini →</span>
       </div>
     </a>
@@ -376,7 +377,7 @@
       <h3>Dashboard Sosial Media</h3>
       <p>Performa 5 akun (IG, TikTok, YouTube), analisis kompetitor, tren Google Trends, dan strategi konten.</p>
       <div class="ticket-status">
-        <span class="badge badge-good">Pemulihan</span>
+        <span class="badge badge-warn">Normalisasi</span>
         <span class="go">Buka di sini →</span>
       </div>
     </a>
@@ -396,7 +397,7 @@
       <span class="ticket-no">04 · HR</span>
       <span class="ticket-icon">🧑‍🍳</span>
       <h3>Dashboard Kinerja Karyawan</h3>
-      <p>Kinerja karyawan per divisi &amp; individu, penilaian bulanan Maret–Agustus 2026.</p>
+      <p>Kinerja karyawan per divisi &amp; individu, penilaian bulanan Maret–September 2026.</p>
       <div class="ticket-status">
         <span class="badge badge-warn">Perlu perhatian</span>
         <span class="go">Buka di sini →</span>
@@ -418,9 +419,20 @@
       <span class="ticket-no">06 · CRM</span>
       <span class="ticket-icon">💬</span>
       <h3>Dasbor Kepuasan Pelanggan</h3>
-      <p>367 respons survei Feb–Sep 2026 dari 2 lokasi (Onty Resto &amp; Onty Cake), lengkap analisis AI &amp; tema kritik.</p>
+      <p>405 respons survei Feb–Sep 2026 dan 632 ulasan Google Maps dari 2 lokasi, lengkap analisis AI &amp; tema kritik.</p>
       <div class="ticket-status">
         <span class="badge badge-live">Live sheet</span>
+        <span class="go">Buka di sini →</span>
+      </div>
+    </a>
+
+    <a class="ticket" href="#" onclick="openViewer(event,'https://muslihm3.github.io/Finance_Onty/','Dashboard Keuangan','💰')">
+      <span class="ticket-no">07 · FINANCE</span>
+      <span class="ticket-icon">💰</span>
+      <h3>Dashboard Keuangan</h3>
+      <p>Laba rugi September 2026 Onty 1 &amp; Onty 2 (sumber Accurate): margin, HPP, biaya karyawan, diskon, dan prime cost.</p>
+      <div class="ticket-status">
+        <span class="badge badge-good">Margin sehat</span>
         <span class="go">Buka di sini →</span>
       </div>
     </a>
@@ -434,7 +446,7 @@
       <span class="sec-tag">Ringkasan</span>
       <h2>Apa yang terjadi di tiap dashboard</h2>
     </div>
-    <p class="sec-note">Angka di bawah diambil langsung dari dashboard Penjualan dan Sosial Media (data terkonfirmasi). Dashboard lain menyajikan data secara real-time dari Google Sheets sehingga ringkasannya bersifat struktural — buka tiket di atas untuk angka terbaru.</p>
+    <p class="sec-note">Angka di bawah diambil langsung dari dashboard Penjualan, Sosial Media, HR, Kepuasan Pelanggan, dan Keuangan. Marketing dan AI Studio dimuat live saat dibuka, jadi angkanya tidak diringkas di sini.</p>
   </div>
 
   <div class="stack">
@@ -446,24 +458,26 @@
           <div class="panel-icon">📊</div>
           <div>
             <h3>Penjualan — Onty 1 &amp; Onty 2</h3>
-            <span>Jan–Agu 2026 (lengkap, s.d. 31 Agu) · update 14 September 2026</span>
+            <span>Jan–Sep 2026 (data s.d. 30 Sep) · update 7 Oktober 2026</span>
           </div>
         </div>
-        <span class="badge badge-good">Gap efisiensi menyempit</span>
+        <span class="badge badge-warn">O1 tertinggal target</span>
       </div>
       <div class="panel-grid">
-        <div class="mini"><div class="mini-label">Onty 1</div><div class="mini-value">Rp2.95M</div><div class="mini-sub up">Ach 97.3% · +15.0% YoY</div></div>
-        <div class="mini"><div class="mini-label">Onty 2</div><div class="mini-value">Rp4.68M</div><div class="mini-sub up">Ach 103.7% · +55.0% YoY</div></div>
-        <div class="mini"><div class="mini-label">Diskon O1</div><div class="mini-value">6.59%</div><div class="mini-sub up">▼ turun dari 7.61% — membaik</div></div>
-        <div class="mini"><div class="mini-label">Diskon O2</div><div class="mini-value">3.21%</div><div class="mini-sub down">▲ naik dari 2.49% — melonggar</div></div>
+        <div class="mini"><div class="mini-label">Onty 1 (Toba) · Jan–Sep</div><div class="mini-value">Rp3.27M</div><div class="mini-sub down">Ach 91.2% · +13.7% YoY</div></div>
+        <div class="mini"><div class="mini-label">Onty 2 (Imam Bonjol) · Jan–Sep</div><div class="mini-value">Rp5.32M</div><div class="mini-sub up">Ach 98.7% · +55.7% YoY</div></div>
+        <div class="mini"><div class="mini-label">Gabungan · Jan–Sep</div><div class="mini-value">Rp8.59M</div><div class="mini-sub flat">Ach 95.7% · 74.9% dari target tahunan</div></div>
+        <div class="mini"><div class="mini-label">September 2026</div><div class="mini-value">Rp947.5Jt</div><div class="mini-sub flat">-0.57% MoM · ach 90.2%</div></div>
       </div>
       <p class="panel-body">
-        Kabar baik: <b>gap efisiensi antar-outlet akhirnya menyempit signifikan</b> — dari 5.11pp ke <b>3.38pp</b>, level terbaik sejak beberapa bulan terakhir. Ini terjadi karena <b>O1 membaik</b> (diskon turun 7.61%→6.59%) sementara <b>O2 sedikit melonggar</b> (2.49%→3.21%) — pola berlawanan arah dari bulan lalu, menegaskan bahwa fluktuasi bulanan ini wajar dan perlu dilihat sebagai tren jangka menengah, bukan angka satu bulan. Produk terboros berganti lagi: <b>Sobek Kombinasi kini di O1 (43.85%)</b>, sementara O2 masih didominasi Chiffon Keju (32.32%). Revenue gabungan kedua outlet kini <b>Rp7.63M (achievement 101.1%, growth +36.6% YoY)</b> — dashboard kini juga menyediakan tampilan "All Outlet" terpadu. Volume Agustus turun tipis -3.3% vs Juli (85.128 pcs), dengan O1 -6.5% (lebih moderat dari laporan bulan lalu) dan O2 relatif stabil. <b>Donat Mises</b> tetap produk volume #1 di kedua outlet.
+        Secara gabungan penjualan Jan–Sep <b>Rp8.59M, 95.7% dari target</b> (sisa target tahunan Rp11.47M adalah Rp2.88M, atau sekitar Rp960Jt per bulan; September Rp947.5Jt). Yang berbeda tajam adalah dua outlet. <b>O2 menopang</b>: September Rp623.0Jt (ach 95.8%, YoY +61.8%), dan Q4 hanya perlu rata-rata Rp487Jt per bulan untuk menutup target tahunannya. <b>O1 melambat</b>: September Rp324.5Jt (-5.64% vs Agustus, ach 81.1%), pertumbuhan YoY turun dari +34.6% (Maret) dan +18.9% (Juni) menjadi sekitar <b>+3% sejak Juli</b>. Untuk menutup target tahunan O1 (Rp4.69M, sisa Rp1.42M) diperlukan rata-rata <b>Rp473Jt per bulan</b>, sedangkan Juli–September rata-rata Rp345Jt. Diskon roti: angka utama dashboard 6.59% (O1) dan 3.21% (O2) untuk Apr–Sep, sementara hitungan per produk di tab Diskon menghasilkan 6.29% dan 3.30%. Per bulan, diskon melonjak di Agustus (O1 8.06%, O2 7.61%) lalu turun di September (O1 5.56%, O2 3.57%). Produk dengan diskon tertinggi September: O1 Sobek Coklat Keju 45.5%, Tawar Keju 36.0%; di O2 ada tiga produk dengan diskon 91–100% (Bolen Lilit Keju 40 dari 40 pcs, Roll Cake M/C/Taro 22 dari 24, Pastry Coklat 53 dari 58) yang perlu dicek apakah produk uji coba/sampling atau kelebihan produksi. Donat Mesis tetap volume #1 di kedua outlet.
       </p>
       <div class="taglist">
-        <span class="tag green">Gap O1↔O2 menyempit ke 3.38pp — level terbaik</span>
-        <span class="tag gold">Sobek Kombinasi kini terboros di O1 (43.85%)</span>
-        <span class="tag gold">Diskon O2 naik ke 3.21% — pantau agar tak jadi tren</span>
+        <span class="tag red">O1: ach 81.1% di September, perlu Rp473Jt/bulan untuk target tahunan</span>
+        <span class="tag red">Growth O1 turun ke ~+3% YoY sejak Juli</span>
+        <span class="tag green">O2: ach 98.7% YTD, YoY +55.7%</span>
+        <span class="tag gold">Diskon turun di September setelah melonjak di Agustus</span>
+        <span class="tag gold">3 produk O2 berdiskon 91–100% — cek</span>
       </div>
       <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_penjualan_onty/','Dashboard Penjualan','📊')">Lihat dashboard penjualan lengkap →</a>
     </div>
@@ -475,26 +489,59 @@
           <div class="panel-icon">📱</div>
           <div>
             <h3>Sosial Media — 5 Akun Ekosistem Onty</h3>
-            <span>Data Agustus 2026 · strategi September 2026</span>
+            <span>Data aktual September 2026 · update 9 Oktober · strategi Oktober 2026</span>
           </div>
         </div>
-        <span class="badge badge-good">Pemulihan besar</span>
+        <span class="badge badge-warn">Normalisasi + 1 teguran YouTube</span>
       </div>
       <div class="panel-grid">
-        <div class="mini"><div class="mini-label">IG @ontycake</div><div class="mini-value">47.3K</div><div class="mini-sub up">Skor 88/100 · naik dari 68</div></div>
-        <div class="mini"><div class="mini-label">TikTok @ontycake</div><div class="mini-value">9.2K</div><div class="mini-sub up">Skor 82 · views +143.5%</div></div>
-        <div class="mini"><div class="mini-label">YouTube</div><div class="mini-value">7.6K</div><div class="mini-sub up">Skor 42 · 1 video reguler terbit lagi</div></div>
-        <div class="mini"><div class="mini-label">TT Baking Class</div><div class="mini-value">538</div><div class="mini-sub up">Skor 72 · views +11.262%!</div></div>
+        <div class="mini"><div class="mini-label">IG @ontycake</div><div class="mini-value">47.4K</div><div class="mini-sub down">Skor 74/100 · turun dari 88</div></div>
+        <div class="mini"><div class="mini-label">TikTok @ontycake</div><div class="mini-value">9.3K</div><div class="mini-sub down">Skor 70 · views -12.9%</div></div>
+        <div class="mini"><div class="mini-label">YouTube</div><div class="mini-value">7.6K</div><div class="mini-sub down">Skor 34 · 1 teguran komunitas aktif</div></div>
+        <div class="mini"><div class="mini-label">IG Baking Class</div><div class="mini-value">2.8K</div><div class="mini-sub up">Skor 62 · naik dari 55</div></div>
       </div>
       <p class="panel-body">
-        Pembalikan arah total dari bulan lalu. Strategi <b>"Roti Merdeka" &amp; "Taro Bun Merdeka"</b> yang direkomendasikan sukses besar: TikTok @ontycake views <b>+143.5%</b> (34.840→84.837), dan yang paling dramatis — <b>TikTok Baking Class melonjak +11.262%</b> (571→64.859 views), langsung dari skor 4/100 ke 72/100 setelah 3 bulan krisis beruntun. Pendorongnya konten guerrilla <b>"Merdeka = Bebas Bermimpi"</b> (ajak warga ucap mimpi untuk roti gratis) yang tembus 29.1K views — jauh mengungguli konten reveal produk biasa. IG utama juga pulih penuh (skor 68→88), semua metrik naik bersamaan. Satu-satunya yang melemah: <b>IG Baking Class turun -24.2%</b> tayangan meski followers tetap naik — kelas premium bulan ini tak sesukses "Mom &amp; Me" Juli. Fokus September: peluncuran <b>"Roti Geloong"</b> (nama lokal untuk Pain aux Raisins), memanfaatkan status Breakout nasional untuk "raisin roll" &amp; "pain au raisin", dengan mereplikasi formula konten interaktif yang baru terbukti berhasil.
+        Setelah lonjakan Agustus, September <b>menormalisasi</b>: total ekosistem 67.7K (+103 vs Agustus), tetapi skor hampir semua akun turun. IG @ontycake views 579K (-14.3%) dan interaksi 3.846 (-25.6%); TikTok @ontycake views 73.9K (-12.9%); TikTok Baking Class views 40.4K (-37.7%, skor 72→58) meski followers naik 18% (538→635). Satu-satunya yang membaik adalah <b>IG Baking Class</b> (tayangan 87.1K, +2.8%; skor 55→62). <b>Perlu perhatian segera: YouTube @ontycakebakery menerima 1 teguran Pedoman Komunitas pada 16 September</b> setelah satu konten dihapus karena judul/thumbnail dinilai berlebihan; teguran kedua dalam 90 hari dapat membatasi fitur upload. Views YouTube juga turun 29.3% (skor 42→34). Fokus Oktober: peluncuran <b>"Roti Kasur"</b> (roti tawar lembut gaya mattress bread) mengikuti topik nasional Sari Roti: di Google Trends "sari roti" indeks 100, "sari roti kasur" 90 (-20%), "roti kasur sari roti" 73 (-30%), dan "roti sobek sari roti" berstatus Breakout. Jawa Tengah peringkat #3 nasional untuk pencarian "roti". Dashboard juga menambahkan Sari Roti (439K), The Harvest (750K), dan Holland Bakery (504K) sebagai pembanding skala nasional.
       </p>
       <div class="taglist">
-        <span class="tag green">TT Baking Class pulih total — pertahankan momentum, jangan ulangi pola lama</span>
-        <span class="tag green">Konten interaktif/guerrilla &gt; reveal produk pasif</span>
-        <span class="tag gold">IG Baking Class turun -24% — butuh format kolaboratif baru</span>
+        <span class="tag red">YouTube: 1 teguran aktif sejak 16 Sep — audit judul &amp; thumbnail</span>
+        <span class="tag gold">Views IG &amp; TikTok @ontycake turun pasca-viral Agustus</span>
+        <span class="tag gold">TikTok Baking Class: followers +18%, views -37.7%</span>
+        <span class="tag green">IG Baking Class membaik (skor 62)</span>
+        <span class="tag">Oktober: peluncuran "Roti Kasur"</span>
       </div>
       <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_sosmed_onty/','Dashboard Sosial Media','📱')">Lihat dashboard sosial media lengkap →</a>
+    </div>
+
+    <!-- FINANCE -->
+    <div class="panel">
+      <div class="panel-top">
+        <div class="panel-title">
+          <div class="panel-icon">💰</div>
+          <div>
+            <h3>Keuangan — Laba Rugi Onty 1 &amp; Onty 2</h3>
+            <span>1–30 September 2026 · sumber Accurate (dicetak 9 Oktober 2026)</span>
+          </div>
+        </div>
+        <span class="badge badge-good">Margin sehat</span>
+      </div>
+      <div class="panel-grid">
+        <div class="mini"><div class="mini-label">Net Sales</div><div class="mini-value">Rp1.29M</div><div class="mini-sub flat">O1 Rp477Jt · O2 Rp812Jt</div></div>
+        <div class="mini"><div class="mini-label">Laba Bersih</div><div class="mini-value">Rp356Jt</div><div class="mini-sub up">margin 27.6% · Rp27.6 per Rp100</div></div>
+        <div class="mini"><div class="mini-label">HPP / Net Sales</div><div class="mini-value">35.8%</div><div class="mini-sub down">O2 43.7% vs O1 22.3%</div></div>
+        <div class="mini"><div class="mini-label">Biaya Karyawan / Net Sales</div><div class="mini-value">26.6%</div><div class="mini-sub down">O1 35.1% vs O2 21.6%</div></div>
+      </div>
+      <p class="panel-body">
+        Secara gabungan keuangan September <b>sehat</b>: margin kotor 64.2%, margin bersih 27.6%, dan <b>prime cost (HPP + seluruh biaya karyawan) 62.4%</b>, masih di kisaran 60–65% yang dipakai dashboard sebagai patokan usaha makanan. Per cabang prime cost <b>O1 57.4%</b> dan <b>O2 65.3%</b> (sedikit di atas batas 65%). Margin bersih <b>O1 25.9%, O2 28.7%</b>; O1 membukukan biaya sekali jalan <b>pelatihan &amp; sertifikasi halal Rp38.5Jt</b>, tanpa itu margin O1 sekitar <b>34.0%</b>. Angka per cabang belum bisa dibandingkan apa adanya: HPP O2 hampir dua kali O1 (43.7% vs 22.3%), kemungkinan karena <b>O2 memproduksi/membeli untuk O1 tanpa pencatatan transfer stok antar-cabang</b> (bisa juga sebagian karena O2 melayani menu resto yang HPP-nya lebih tinggi), dan gaji kedua cabang hampir sama (Rp145.7Jt vs Rp146.7Jt) padahal penjualan O1 hanya 37% dari total, sehingga biaya karyawan O1 menyedot 35.1% dari net sales. Diskon + retur O1 (Rp17.6Jt, 3.6% dari penjualan kotor) sekitar dua kali O2 (Rp13.5Jt, 1.6%), searah dengan dashboard Penjualan. Penjualan Toko di Accurate (O1 Rp335Jt, O2 Rp641Jt) selaras dengan dashboard Penjualan (Rp324.5Jt dan Rp623.0Jt, selisih sekitar 3%); sisa omset Accurate berasal dari SnackBox dan cake. Biaya marketing gabungan hanya <b>Rp8.8Jt (0.68% dari net sales)</b>, jauh di bawah kisaran 2–5% yang disarankan dashboard.
+      </p>
+      <div class="taglist">
+        <span class="tag green">Margin bersih 27.6% · prime cost 62.4% (kisaran 60–65%)</span>
+        <span class="tag gold">Prime cost O2 65.3% — di atas batas 65%</span>
+        <span class="tag gold">Catat transfer stok O2→O1 agar margin cabang akurat</span>
+        <span class="tag gold">O1: biaya karyawan 35.1% dari sales — tinjau shift jam sepi</span>
+        <span class="tag red">Cek data: O2 tanpa biaya sewa, BPJS &amp; JHT; baris tenaga kerja langsung O2 hanya Rp8</span>
+      </div>
+      <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/Finance_Onty/','Dashboard Keuangan','💰')">Lihat dashboard keuangan lengkap →</a>
     </div>
 
     <!-- CRM -->
@@ -504,24 +551,25 @@
           <div class="panel-icon">💬</div>
           <div>
             <h3>Kepuasan Pelanggan</h3>
-            <span>1 Feb – 1 Sep 2026 · 367 respons</span>
+            <span>1 Feb – 30 Sep 2026 · 405 respons survei + 632 ulasan Google Maps</span>
           </div>
         </div>
         <span class="badge badge-good">Sangat memuaskan</span>
       </div>
       <div class="panel-grid">
-        <div class="mini"><div class="mini-label">Rating Rata-rata</div><div class="mini-value">4.86</div><div class="mini-sub up">dari 5.0 · 98.6% beri skor ≥4</div></div>
-        <div class="mini"><div class="mini-label">Onty Resto</div><div class="mini-value">4.83</div><div class="mini-sub flat">n=174 · Jl. Imam Bonjol</div></div>
-        <div class="mini"><div class="mini-label">Onty Cake &amp; Bakery</div><div class="mini-value">4.88</div><div class="mini-sub up">n=193 · Jl. Toba</div></div>
-        <div class="mini"><div class="mini-label">Rating ≤3</div><div class="mini-value">5</div><div class="mini-sub up">Tetap 5 — tak ada kasus baru sejak Juli</div></div>
+        <div class="mini"><div class="mini-label">Rating Survei</div><div class="mini-value">4.86</div><div class="mini-sub up">405 respons · 99% beri skor ≥4</div></div>
+        <div class="mini"><div class="mini-label">Gabungan Survei + Maps</div><div class="mini-value">4.81</div><div class="mini-sub flat">1.037 penilaian · Maps 4.78</div></div>
+        <div class="mini"><div class="mini-label">Toba (Onty Cake &amp; Bakery)</div><div class="mini-value">4.79</div><div class="mini-sub flat">Survei 4.88 · Maps 4.75 (486)</div></div>
+        <div class="mini"><div class="mini-label">Imam Bonjol (Onty Resto)</div><div class="mini-value">4.86</div><div class="mini-sub up">Survei 4.84 · Maps 4.90 (146)</div></div>
       </div>
       <p class="panel-body">
-        Kepuasan pelanggan justru <b>membaik</b> seiring bertambahnya respons — rata-rata naik dari 4.83 ke <b>4.86</b>, dan yang lebih penting: <b>jumlah respons rating rendah tetap 5</b> meski volume responden bertambah 48 orang (319→367) dalam sebulan terakhir — artinya tidak ada keluhan serius baru. Onty Cake &amp; Bakery makin unggul dari Onty Resto (4.88 vs 4.83). Tema keluhan/saran #1 tetap <b>Harga/Ongkir</b>, kini disebut <b>23 kali</b> (naik dari 19) — makin menegaskan ini isu yang perlu direspons, bukan sekadar sinyal awal. <b>Kecepatan Respon Admin/CS</b> juga naik jadi 21 sebutan (dari 17).
+        Kepuasan tetap tinggi: dari 405 respons survei hanya <b>5 bernilai ≤3</b> (tidak ada yang baru sejak Juni), dan September rata-rata 4.90 dari 39 respons. Kekuatan utama: rasa produk enak &amp; lembut (263 respons), pelayanan ramah (99), dan variasi produk (71). Dashboard kini juga membaca 632 ulasan Google Maps, dan di situ muncul sinyal yang <b>khusus Toba</b>: rata-rata ulasan 6 bulan terakhir 4.64 (di bawah rata-rata keseluruhan 4.75), keluhan terbanyak tempat sempit &amp; parkir terbatas (14 ulasan), sikap/respon admin, kasir, atau pemilik (7), dan harga dirasa mahal (6). Selain itu <b>baru 57% ulasan Maps Toba yang dibalas</b>, dibanding 91% di Imam Bonjol. Tema yang perlu diperhatikan lintas survei dan Maps: fasilitas toko &amp; kebersihan (25 ulasan), permintaan promo &amp; sensitivitas harga (22), konsistensi rasa item tertentu (18), permintaan variasi menu baru (15), dan sikap karyawan di toko (13).
       </p>
       <div class="taglist">
-        <span class="tag gold">Harga/Ongkir = keluhan #1, makin sering (23x)</span>
-        <span class="tag gold">Kecepatan respon CS naik jadi 21x — evaluasi SLA</span>
-        <span class="tag green">Rating naik ke 4.86 meski volume bertambah</span>
+        <span class="tag gold">Toba: Maps 6 bulan terakhir 4.64 · balasan ulasan baru 57%</span>
+        <span class="tag gold">Fasilitas &amp; parkir (25) dan promo/harga (22) = tema terbanyak</span>
+        <span class="tag gold">Sikap admin/kasir di Toba muncul 7× di Maps</span>
+        <span class="tag green">99% responden survei beri skor ≥4</span>
       </div>
       <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/feedback_customer/','Dasbor Kepuasan Pelanggan','💬')">Lihat dashboard kepuasan pelanggan →</a>
     </div>
@@ -533,24 +581,25 @@
           <div class="panel-icon">🧑‍🍳</div>
           <div>
             <h3>Kinerja Karyawan — HR</h3>
-            <span>Penilaian Maret–Agustus 2026 · 94 penilaian bulan ini</span>
+            <span>Penilaian Maret–September 2026 · 101 penilaian bulan ini</span>
           </div>
         </div>
-        <span class="badge badge-warn">Tren 6 bulan menurun</span>
+        <span class="badge badge-warn">Kembali ke titik terendah</span>
       </div>
       <div class="panel-grid">
-        <div class="mini"><div class="mini-label">Rata-rata Agustus</div><div class="mini-value">3.63</div><div class="mini-sub down">dari 5.0 · turun dari 4.43 (Maret)</div></div>
-        <div class="mini"><div class="mini-label">Karyawan Menurun</div><div class="mini-value">72</div><div class="mini-sub down">dari 136 dilacak (53%)</div></div>
-        <div class="mini"><div class="mini-label">Karyawan Meningkat</div><div class="mini-value">14</div><div class="mini-sub flat">dari 136 dilacak (10%)</div></div>
-        <div class="mini"><div class="mini-label">Divisi Terlemah</div><div class="mini-value">3.00</div><div class="mini-sub down">Kasir &amp; CS Onty 1 (n=8)</div></div>
+        <div class="mini"><div class="mini-label">Rata-rata September</div><div class="mini-value">3.60</div><div class="mini-sub down">turun dari 4.43 (Maret) · sama dengan Juni</div></div>
+        <div class="mini"><div class="mini-label">Karyawan Menurun</div><div class="mini-value">58</div><div class="mini-sub down">dari 101 dinilai (57%)</div></div>
+        <div class="mini"><div class="mini-label">Karyawan Meningkat</div><div class="mini-value">10</div><div class="mini-sub flat">dari 101 dinilai (10%)</div></div>
+        <div class="mini"><div class="mini-label">Divisi Terlemah</div><div class="mini-value">3.35</div><div class="mini-sub down">Produksi Onty 2 (n=22)</div></div>
       </div>
       <p class="panel-body">
-        Temuan penting yang belum pernah muncul di ringkasan sebelumnya: skor kinerja rata-rata karyawan turun <b>cukup konsisten selama 6 bulan</b> — dari 4.43 (Maret) ke 3.63 (Agustus), dengan titik terendah di Juni (3.60). Lebih dari separuh karyawan yang dilacak (72 dari 136, atau 53%) berstatus <b>"Menurun"</b> bulan ini, jauh lebih banyak dari yang "Meningkat" (14 orang). Penurun terbesar adalah Nur Fiana (Kasir/Waiters Onty 2, -1.8 poin) dan Muhamad Firman Ardiansyah (Produksi Onty 1, -1.6 poin). Divisi <b>Kasir &amp; CS Onty 1 jadi yang terlemah</b> (rata-rata 3.00) — sejalan dengan temuan CRM bahwa Kecepatan Respon Admin/CS adalah keluhan pelanggan #2 yang makin sering muncul. Pola waktunya juga mencurigakan: penurunan performa HR terjadi <b>bersamaan dengan periode pertumbuhan revenue tercepat</b> (O2 +53–56% YoY) — indikasi umum bahwa beban kerja naik lebih cepat dari kapasitas tim.
+        Skor rata-rata kembali ke <b>3.60</b> di September, setara titik terendah Juni, setelah sempat naik tipis di Juli (3.68). Dari 101 karyawan yang dinilai, <b>58 berstatus "Menurun"</b> (57%), 31 stagnan, dan hanya 10 meningkat. Sistem menandai <b>43 orang untuk Wellbeing Check</b>, 28 untuk Dorongan Target, dan 15 untuk Coaching Prioritas; KPI terlemah paling sering <b>Performance (55 orang)</b>, lalu Disiplin (23). Divisi terlemah sekarang <b>Produksi Onty 2 (3.35)</b>; Kasir &amp; CS Onty 1 yang bulan lalu terendah (3.00) sudah pulih ke 3.51, sedangkan Produksi Onty 1 turun dari 3.89 ke 3.61. Penurun terbesar bulan ini semuanya dari Produksi Onty 1: <b>Romi Abdul Karim (-1.8), Rio Ardi Saputra (-1.5), Sri Yuniarti (-1.4)</b>, disusul dua kasir Onty 2 (Ahmad Zaenal Muzaky dan Muhammad Faisal, masing-masing -1.4).
       </p>
       <div class="taglist">
-        <span class="tag red">53% karyawan berstatus menurun — cek beban kerja</span>
-        <span class="tag red">Kasir &amp; CS Onty 1 = divisi terlemah (3.00)</span>
-        <span class="tag gold">Kaitkan dengan keluhan "kecepatan respon CS" di CRM</span>
+        <span class="tag red">57% karyawan berstatus menurun — cek beban kerja</span>
+        <span class="tag red">Produksi Onty 2 = divisi terlemah (3.35)</span>
+        <span class="tag gold">Produksi Onty 1 turun 3.89 → 3.61 · 3 penurun terbesar dari divisi ini</span>
+        <span class="tag green">Kasir &amp; CS Onty 1 pulih 3.00 → 3.51</span>
       </div>
       <a class="panel-link" href="#" onclick="openViewer(event,'https://muslihm3.github.io/dashboard_hr_onty/','Dashboard Kinerja Karyawan','🧑‍🍳')">Lihat dashboard HR lengkap →</a>
     </div>
@@ -585,43 +634,53 @@
       <span class="sec-tag">Analisis Lintas-Dashboard</span>
       <h2>Benang merah antar data — bukan sekadar angka terpisah</h2>
     </div>
-    <p class="sec-note">Menghubungkan temuan dari penjualan, sosial media, dan tren pasar untuk melihat gambaran bisnis secara utuh.</p>
+    <p class="sec-note">Menghubungkan temuan dari penjualan, keuangan, HR, pelanggan, dan sosial media untuk melihat gambaran bisnis secara utuh.</p>
   </div>
 
   <div class="analysis-grid">
     <div>
       <div class="thread">
-        <h4>1. Konten interaktif terbukti menang — pelajaran Agustus untuk peluncuran Roti Geloong</h4>
-        <p>Bulan lalu momentum pasar (SI "taro bun" +130%) sudah ada tapi eksekusi konten belum menyusul. Agustus membuktikan formulanya: kampanye guerrilla <b>"Merdeka = Bebas Bermimpi"</b> (ajak warga terlibat langsung, bukan sekadar foto produk) meraih 29.1K views — jauh di atas rata-rata — dan mendorong pemulihan di semua akun sekaligus. Pola sama juga berhasil di TikTok (video produk konkret + urgency mengalahkan konten "mood"). Pelajaran ini langsung relevan untuk peluncuran <b>"Roti Geloong"</b> September: replikasi format interaktif, bukan kembali ke reveal produk pasif yang terbukti kurang optimal Juli lalu.</p>
+        <h4>1. Setelah lonjakan Agustus, September normal — tantangannya menjaga ritme menuju "Roti Kasur"</h4>
+        <p>Kampanye guerrilla Agustus ("Merdeka = Bebas Bermimpi", 29.1K views) mendorong pemulihan di semua akun, dan September memperlihatkan efek normalisasi: views IG @ontycake -14.3%, TikTok @ontycake -12.9%, TikTok Baking Class -37.7% (followers justru +18%, tanda audiens baru bertahan). Skor ekosistem turun di empat akun dan hanya IG Baking Class yang naik (55→62). Peluncuran <b>"Roti Kasur"</b> di Oktober punya momentum pasar (kata kunci "sari roti kasur" indeks 90, sudah melandai 20%), jadi waktunya sempit: formula konten interaktif yang terbukti di Agustus perlu dipakai lagi, bukan reveal produk pasif. Satu risiko di luar konten: <b>1 teguran Pedoman Komunitas YouTube</b> (16 Sep) — teguran kedua dalam 90 hari bisa membatasi fitur upload.</p>
       </div>
       <div class="thread">
-        <h4>2. Ketidakefisienan operasional O1 butuh perhatian sebelum scale-up konten</h4>
-        <p>O1 tumbuh (+15.0%) dengan diskon roti kini membaik ke 6.59%, sementara O2 tumbuh lebih kencang (+55.0%) tapi efisiensinya justru <b>sedikit melonggar</b> ke 3.21%. Gap efisiensi antar-outlet menyempit ke <b>3.38pp</b> — level terbaik dalam beberapa bulan terakhir, dan tren bulanan yang berganti arah ini (kadang O1 membaik, kadang O2) menegaskan pentingnya melihat tren jangka menengah, bukan satu bulan saja. Dengan sosial media baru saja terbukti bisa mendorong permintaan besar dalam semalam (lihat TikTok Baking Class +11.262%), pengawasan SOP produksi di kedua outlet tetap penting agar gap yang sudah menyempit ini tidak melebar lagi saat Roti Geloong ikut viral. <b>Perbaikan &amp; pengawasan SOP produksi sebaiknya berjalan paralel</b> dengan kampanye baru, bukan setelahnya.</p>
+        <h4>2. Penjualan ditopang O2; O1 melambat sejak Juli</h4>
+        <p>Gabungan Jan–Sep Rp8.59M (95.7% dari target; 74.9% dari target tahunan Rp11.47M). O2 tumbuh +55.7% YoY dan tinggal butuh rata-rata Rp487Jt per bulan di Q4 (Juli–September rata-rata Rp620Jt). O1 justru melambat: pertumbuhan YoY dari +34.6% (Maret) menjadi sekitar +3% sejak Juli, September ach 81.1%, dan target tahunannya membutuhkan Rp473Jt per bulan dibanding rata-rata Rp345Jt belakangan ini, sehingga target tahunan O1 hampir pasti terlewat tanpa perubahan besar. Diskon sendiri sempat melonjak di Agustus (O1 8.06%, O2 7.61%) lalu turun di September (5.56% dan 3.57%), jadi lonjakan Agustus tampaknya sementara, tetapi tiga produk O2 berdiskon 91–100% di September perlu diperiksa.</p>
       </div>
       <div class="thread">
-        <h4>3. TikTok Baking Class pulih total — bukti akar masalahnya konten, bukan shadowban</h4>
-        <p>Setelah 3 bulan krisis beruntun (skor turun sampai 4/100), akun ini melonjak ke <b>72/100</b> hanya dengan mengganti pola konten — bukan membuat akun baru seperti yang sempat dipertimbangkan. Ini mengonfirmasi diagnosis lama: masalahnya selalu di eksekusi caption/format berulang, bukan pembatasan algoritma permanen. Pelajaran pentingnya untuk ke depan: <b>begitu ada akun yang stagnan/menurun berbulan-bulan, cek dulu apakah rencana perbaikan benar-benar dijalankan</b> sebelum mengambil langkah drastis seperti ganti akun.</p>
+        <h4>3. O1 (Toba) menunjukkan sinyal lemah dari empat dashboard sekaligus</h4>
+        <p>Penjualan: ach 81.1% dan growth ~+3%. Pelanggan: ulasan Maps Toba 6 bulan terakhir 4.64 (di bawah rata-rata 4.75), sikap admin/kasir muncul 7× dan baru 57% ulasan dibalas. Keuangan: biaya karyawan O1 35.1% dari net sales (O2 21.6%) karena gaji hampir sama padahal penjualan lebih kecil. HR: Produksi Onty 1 turun dari 3.89 ke 3.61 dengan tiga penurun terbesar dari divisi ini, sementara Kasir &amp; CS Onty 1 sudah pulih (3.00→3.51). Keempatnya bisa saling berkaitan atau tidak; yang pasti Toba layak diperlakukan sebagai satu paket pemulihan (layanan, jadwal staf, parkir/fasilitas, dan penjualan), bukan empat masalah terpisah.</p>
       </div>
       <div class="thread">
-        <h4>4. Harga/Ongkir jadi keluhan pelanggan yang makin sering muncul</h4>
-        <p>Dari 367 respons survei kepuasan (naik dari 319), hanya 5 yang bernilai ≤3 — kepuasan pelanggan tetap sangat solid secara keseluruhan. Tapi ada pola berkelanjutan yang layak diperhatikan: <b>Harga/Ongkir kini disebut 23 kali</b> (naik dari 19) sebagai tema keluhan/saran #1, meski diskon O1 di sisi Penjualan justru membaik bulan ini (kini 6.59%). Ini mengindikasikan diskon besar-besaran belum tentu menjawab persepsi harga pelanggan — mungkin perlu dievaluasi struktur harga produk premium (cake/tart) secara spesifik, bukan hanya taktik diskon roti harian.</p>
+        <h4>4. Pelanggan puas; yang perlu dijawab adalah harga/promo dan fasilitas</h4>
+        <p>Dari 405 respons survei hanya 5 yang ≤3, dan rata-rata Google Maps 4.78 dari 632 ulasan sejalan dengan survei. Tema yang berulang: fasilitas &amp; kebersihan (25 ulasan), promo &amp; sensitivitas harga (22), konsistensi rasa (18), dan permintaan variasi menu (15). Di survei, label Harga/Ongkir tetap terbanyak (15) tetapi hanya 1 sebutan di September. Di sisi lain, diskon + retur O1 sekitar dua kali O2 di Keuangan, sehingga potongan harga sebaiknya diganti bundling yang punya target, bukan diperbanyak. Permintaan variasi menu bisa dijadikan bahan ide produk, termasuk untuk "Roti Kasur".</p>
       </div>
       <div class="thread">
-        <h4>5. Di balik semua angka bagus, performa tim justru menurun 6 bulan berturut-turut</h4>
-        <p>Ini temuan baru dari dashboard HR yang belum pernah masuk analisis sebelumnya: skor kinerja karyawan turun dari 4.43 (Maret) ke 3.63 (Agustus), dan <b>53% karyawan yang dilacak berstatus "Menurun"</b> bulan ini. Waktunya mencurigakan — penurunan ini terjadi <b>persis bersamaan</b> dengan periode pertumbuhan revenue tercepat perusahaan (O2 +53–56% YoY) dan sekarang ditambah lonjakan viral sosial media. Divisi Kasir &amp; CS Onty 1 (skor terlemah, 3.00) juga berimpit dengan keluhan CRM soal "kecepatan respon admin/CS". <b>Pertumbuhan bisnis yang terlihat sehat di dashboard lain mungkin sedang dibayar dengan kelelahan tim</b> — ini layak jadi prioritas serius sebelum makin banyak konten viral menambah beban operasional.</p>
+        <h4>5. Margin bagus, tetapi performa tim (terutama Produksi) masih menurun</h4>
+        <p>Margin bersih September 27.6%, sedangkan skor kinerja karyawan rata-rata 3.60 (Maret 4.43) dengan <b>57% karyawan berstatus "Menurun"</b> dan 43 orang ditandai Wellbeing Check. Titik tekannya di <b>Produksi</b>: Produksi Onty 2 divisi terlemah (3.35), dan tiga penurun terbesar bulan ini (Romi Abdul Karim -1.8, Rio Ardi Saputra -1.5, Sri Yuniarti -1.4) ada di Produksi Onty 1. Penurunan ini berjalan sepanjang periode pertumbuhan revenue tercepat, pola umum ketika beban kerja naik lebih cepat dari kapasitas, tetapi dashboard HR sendiri tidak menyebut penyebabnya, jadi percakapan 1-on-1 perlu mendahului kesimpulan.</p>
+      </div>
+      <div class="thread">
+        <h4>6. Keuangan: pencatatan per cabang belum rapi, angka gabungan tetap valid</h4>
+        <p>Prime cost gabungan 62.4% (O1 57.4%, O2 65.3%) dan margin bersih 27.6%. HPP O2 43.7% vs O1 22.3% kemungkinan besar karena transfer stok O2→O1 belum dicatat (atau sebagian karena menu resto di O2), sehingga margin O2 (28.7%) terlihat lebih rendah dan O1 (25.9%) lebih tinggi dari kenyataan. Biaya O2 juga tampak tidak lengkap (tanpa sewa, BPJS, JHT; satu baris tenaga kerja langsung Rp8); bila terlewat, margin O2 sedikit lebih tinggi. Keputusan staffing, harga, dan target per cabang sebaiknya menunggu pencatatan ini rapi. Satu catatan data lain: angka SnackBox dan cake September di dashboard Penjualan berupa angka bulat dan tidak sama dengan Accurate (mis. SnackBox O2 Rp250Jt vs Rp155Jt), sedangkan penjualan Toko cocok dalam ±3%.</p>
       </div>
     </div>
 
     <div class="side-panel">
       <h4>Radar Risiko Saat Ini</h4>
-      <div class="risk-row"><span>Kinerja HR — karyawan menurun</span><span class="risk-score" style="color:#F2A48A">53% dari 136</span></div>
-      <div class="risk-row"><span>Diskon produksi O1</span><span class="risk-score" style="color:#B6E3C2">6.59% ▼</span></div>
-      <div class="risk-row"><span>IG Baking Class</span><span class="risk-score" style="color:#F2C48A">55/100 ▼ dari 65</span></div>
-      <div class="risk-row"><span>YouTube @ontycakebakery</span><span class="risk-score" style="color:#F2C48A">42/100</span></div>
-      <div class="risk-row"><span>Diskon produksi O2</span><span class="risk-score" style="color:#F2C48A">3.21% ▲</span></div>
-      <div class="risk-row"><span>TikTok Baking Class</span><span class="risk-score" style="color:#B6E3C2">72/100 ▲ pulih dari 4</span></div>
+      <div class="risk-row"><span>O1 · pencapaian target September</span><span class="risk-score" style="color:#F2A48A">81.1% · growth ~+3%</span></div>
+      <div class="risk-row"><span>O1 · kebutuhan Q4 vs rata-rata Jul–Sep</span><span class="risk-score" style="color:#F2A48A">Rp473Jt vs Rp345Jt/bln</span></div>
+      <div class="risk-row"><span>Kinerja HR — karyawan menurun</span><span class="risk-score" style="color:#F2A48A">57% dari 101</span></div>
+      <div class="risk-row"><span>YouTube @ontycakebakery</span><span class="risk-score" style="color:#F2A48A">1 teguran · skor 34</span></div>
+      <div class="risk-row"><span>Skor IG / TikTok @ontycake</span><span class="risk-score" style="color:#F2C48A">74 / 70 ▼</span></div>
+      <div class="risk-row"><span>Biaya karyawan O1 / net sales</span><span class="risk-score" style="color:#F2C48A">35.1% (O2 21.6%)</span></div>
+      <div class="risk-row"><span>Prime cost O2</span><span class="risk-score" style="color:#F2C48A">65.3% (gabungan 62.4%)</span></div>
+      <div class="risk-row"><span>Akurasi margin per cabang</span><span class="risk-score" style="color:#F2C48A">HPP O2 43.7% vs O1 22.3%</span></div>
+      <div class="risk-row"><span>Biaya marketing / net sales</span><span class="risk-score" style="color:#F2C48A">0.68%</span></div>
+      <div class="risk-row"><span>Diskon September (O1 / O2)</span><span class="risk-score" style="color:#B6E3C2">5.56% / 3.57% ▼</span></div>
+      <div class="risk-row"><span>O2 · ach YTD</span><span class="risk-score" style="color:#B6E3C2">98.7%</span></div>
+      <div class="risk-row"><span>Kepuasan pelanggan</span><span class="risk-score" style="color:#B6E3C2">4.86 survei · 4.78 Maps</span></div>
       <p style="margin-top:20px;font-size:12.5px;line-height:1.6;color:#E8C79A;font-family:-apple-system,sans-serif;">
-        Data September 2026. Radar bergeser total: mayoritas akun sosial media pulih, tapi <b>kinerja tim (HR) kini jadi risiko utama</b> — belum pernah masuk radar sebelumnya karena datanya baru bisa diakses bulan ini.
+        Data Oktober 2026 (Penjualan update 7 Okt, Sosmed update 9 Okt, HR, Kepuasan Pelanggan &amp; Keuangan s.d. September). Risiko utama: <b>O1/Toba yang tertinggal</b>, <b>kinerja tim di Produksi</b>, dan <b>teguran YouTube</b>.
       </p>
     </div>
   </div>
@@ -631,7 +690,7 @@
   <div class="sec-head">
     <div>
       <span class="sec-tag">Rencana Aksi</span>
-      <h2>8 prioritas lintas-tim untuk September 2026</h2>
+      <h2>9 prioritas lintas-tim untuk Oktober 2026</h2>
     </div>
     <p class="sec-note">Diurutkan berdasarkan urgensi gabungan dari seluruh dashboard, bukan hanya satu sisi bisnis.</p>
   </div>
@@ -640,62 +699,62 @@
     <div class="plan-item p1">
       <div class="plan-num">01</div>
       <div>
-        <div class="plan-title">Wellbeing check tim — 53% karyawan berstatus menurun 6 bulan berturut-turut</div>
-        <div class="plan-desc">Temuan baru dari HR: skor kinerja turun dari 4.43 ke 3.63 sejak Maret, bertepatan dengan periode pertumbuhan tercepat perusahaan. Mulai dari divisi terlemah (Kasir &amp; CS Onty 1, skor 3.00) dan 5 penurun terbesar (Nur Fiana, Muhamad Firman Ardiansyah, dll) — cek beban kerja sebelum kampanye viral berikutnya menambah tekanan.</div>
+        <div class="plan-title">Audit judul &amp; thumbnail YouTube sebelum upload berikutnya</div>
+        <div class="plan-desc">Channel @ontycakebakery menerima 1 teguran Pedoman Komunitas pada 16 September; teguran kedua dalam 90 hari dapat membatasi fitur upload. Tinjau semua judul/thumbnail yang berpotensi dianggap berlebihan sebelum konten baru naik.</div>
       </div>
-      <div class="plan-owner">HR / Manajemen<b>Mendesak · Temuan Baru</b></div>
+      <div class="plan-owner">Sosial Media<b>Mendesak</b></div>
     </div>
 
     <div class="plan-item p1">
       <div class="plan-num">02</div>
       <div>
-        <div class="plan-title">Eksekusi peluncuran "Roti Geloong" dengan formula interaktif yang terbukti Agustus</div>
-        <div class="plan-desc">Manfaatkan status Breakout nasional "raisin roll" &amp; "pain au raisin". Replikasi format guerrilla/interaktif ala "Merdeka = Bebas Bermimpi" (29.1K views), bukan reveal produk pasif — sudah terbukti 2× lebih efektif bulan lalu.</div>
+        <div class="plan-title">Paket pemulihan Toba (O1): penjualan, layanan, staf, fasilitas</div>
+        <div class="plan-desc">September ach 81.1%, growth ~+3% YoY, dan target tahunan perlu Rp473Jt/bulan (rata-rata Jul–Sep Rp345Jt). Dari CRM: balas ulasan Maps Toba (baru 57% terbalas), tetapkan standar sapaan/respons admin dan kasir, tangani parkir &amp; ruang sempit di jam ramai. Dari Keuangan: tinjau shift jam sepi (biaya karyawan 35.1% dari sales) atau dorong SnackBox dan cake pesanan.</div>
       </div>
-      <div class="plan-owner">Sosial Media + Marketing<b>Prioritas Utama</b></div>
+      <div class="plan-owner">Operasional / Manajemen<b>Mendesak</b></div>
     </div>
 
-    <div class="plan-item p2">
+    <div class="plan-item p1">
       <div class="plan-num">03</div>
       <div>
-        <div class="plan-title">Pertahankan perbaikan O1 (6.59%) — pantau agar diskon O2 (3.21%) tak jadi tren naik</div>
-        <div class="plan-desc">Gap efisiensi O1↔O2 baru saja menyempit ke 3.38pp, level terbaik beberapa bulan terakhir. O1: kurangi batch Sobek Kombinasi (kini terboros, 43.85%) 30–40%. O2: cek kenapa diskon naik dari 2.49%→3.21% sebelum jadi tren berkelanjutan — jangan sampai perbaikan bulan ini di O1 diimbangi kemunduran di O2.</div>
+        <div class="plan-title">Wellbeing check &amp; coaching Produksi — 57% karyawan berstatus menurun</div>
+        <div class="plan-desc">Skor rata-rata 3.60, kembali ke titik terendah. Mulai dari Produksi Onty 2 (3.35) dan Produksi Onty 1 (3.89→3.61; Romi Abdul Karim, Rio Ardi Saputra, Sri Yuniarti turun paling dalam). Prioritaskan 43 karyawan yang ditandai Wellbeing Check, dengan 1-on-1 santai soal beban kerja sebelum mengejar target.</div>
       </div>
-      <div class="plan-owner">Operasional<b>Prioritas Tinggi</b></div>
+      <div class="plan-owner">HR / Manajemen<b>Mendesak</b></div>
     </div>
 
     <div class="plan-item p2">
       <div class="plan-num">04</div>
       <div>
-        <div class="plan-title">Investigasi turunnya IG Baking Class (-24.2% tayangan)</div>
-        <div class="plan-desc">Kelas premium bulan ini (Bolu Gulung, Soft Cookies) tak sesukses "Mom &amp; Me" Juli. Coba format kolaborasi tematik baru — misalnya kelas "Belajar Bikin Roti Geloong Sendiri" — untuk mengulang sukses kolaborasi psikologi bulan lalu.</div>
+        <div class="plan-title">Rapikan pencatatan keuangan sebelum memakai margin per cabang</div>
+        <div class="plan-desc">Catat transfer stok antar-cabang (HPP O2 43.7% vs O1 22.3%), pastikan biaya sewa/BPJS/JHT O2 memang tidak ada atau tercatat di tempat lain, koreksi baris tenaga kerja langsung O2 (Rp8), putuskan pembebanan pelatihan &amp; sertifikasi halal Rp38.5Jt, dan cocokkan angka SnackBox/cake September di dashboard Penjualan dengan Accurate.</div>
       </div>
-      <div class="plan-owner">Sosial Media<b>Prioritas Tinggi</b></div>
+      <div class="plan-owner">Keuangan / Admin<b>Prioritas Tinggi</b></div>
     </div>
 
-    <div class="plan-item p3">
+    <div class="plan-item p2">
       <div class="plan-num">05</div>
       <div>
-        <div class="plan-title">Pertahankan momentum TikTok Baking Class — jangan ulangi pola lama</div>
-        <div class="plan-desc">Setelah pulih dari 4/100 ke 72/100, risiko terbesar sekarang adalah kembali ke pola caption template yang jadi penyebab kolaps 3 bulan sebelumnya. Pertahankan variasi konten musiman dengan tema Roti Geloong.</div>
+        <div class="plan-title">Eksekusi peluncuran "Roti Kasur" dengan format interaktif</div>
+        <div class="plan-desc">Minat "sari roti kasur" masih indeks 90 tetapi melandai 20%, jadi jangan menunda. Posisikan sebagai versi homemade/artisan yang lebih lembut dan segar, dan pakai kembali format guerrilla/interaktif yang terbukti di Agustus. Manfaatkan sinyal Breakout "roti sobek sari roti" dan kekuatan pencarian "roti" di Jawa Tengah (#3 nasional).</div>
       </div>
-      <div class="plan-owner">Sosial Media<b>Berkelanjutan</b></div>
+      <div class="plan-owner">Sosial Media + Marketing<b>Prioritas Tinggi</b></div>
     </div>
 
     <div class="plan-item p3">
       <div class="plan-num">06</div>
       <div>
-        <div class="plan-title">Evaluasi struktur harga produk premium — didorong tren keluhan yang terus naik</div>
-        <div class="plan-desc">Harga/Ongkir tetap tema keluhan #1 di CRM dan makin sering disebut (19→23 dalam sebulan) — evaluasi apakah ini soal harga produk premium (cake/tart), bukan sekadar butuh lebih banyak diskon roti harian.</div>
+        <div class="plan-title">Cegah penurunan lanjutan views IG &amp; TikTok @ontycake</div>
+        <div class="plan-desc">Setelah lonjakan Agustus, views turun 12.9–14.3% dan interaksi IG -25.6%. Siapkan konten pendorong baru, dan jaga ritme TikTok Baking Class (followers +18% tetapi views -37.7%) serta format yang berhasil di IG Baking Class (+2.8%).</div>
       </div>
-      <div class="plan-owner">Manajemen / Pricing<b>Prioritas Sedang</b></div>
+      <div class="plan-owner">Sosial Media<b>Prioritas Sedang</b></div>
     </div>
 
     <div class="plan-item p3">
       <div class="plan-num">07</div>
       <div>
-        <div class="plan-title">Volume Agustus turun tipis (-3.3%) — pantau, bukan darurat</div>
-        <div class="plan-desc">Setelah data lengkap sebulan penuh, penurunan Agustus ternyata jauh lebih moderat dari perkiraan awal (O1 -6.5%, bukan -15.8%) — konsisten dengan pola musiman biasa. Tetap pantau tren September seiring peluncuran Roti Geloong.</div>
+        <div class="plan-title">Periksa produk berdiskon sangat tinggi dan tekan diskon di bawah 3%</div>
+        <div class="plan-desc">September: tiga produk O2 berdiskon 91–100% (Bolen Lilit Keju, Roll Cake M/C/Taro, Pastry Coklat) — pastikan apakah uji coba/sampling atau kelebihan produksi. O1: Sobek Coklat Keju 45.5% dan Tawar Keju 36.0%. Diskon bulanan turun di September, tetapi masih di atas target optimal di bawah 3% yang disebut dashboard Penjualan.</div>
       </div>
       <div class="plan-owner">Operasional<b>Prioritas Sedang</b></div>
     </div>
@@ -703,18 +762,27 @@
     <div class="plan-item p3">
       <div class="plan-num">08</div>
       <div>
-        <div class="plan-title">Pantau kepuasan pelanggan selama peluncuran Roti Geloong</div>
-        <div class="plan-desc">Tinjau tren rating mingguan &amp; tema kritik-saran di dua lokasi selama September — baseline saat ini sangat baik dan justru membaik (4.86/5), jaga agar tidak turun saat volume produksi naik untuk kampanye baru.</div>
+        <div class="plan-title">Uji kenaikan bertahap anggaran marketing</div>
+        <div class="plan-desc">Marketing gabungan Rp8.8Jt hanya 0.68% dari net sales, sedangkan dashboard Keuangan menyarankan 2–5%. Dengan margin bersih 27.6% ada ruang untuk uji coba terukur (mis. konten berbayar untuk "Roti Kasur"), dievaluasi lewat penjualan dan views.</div>
       </div>
-      <div class="plan-owner">CRM / Layanan<b>Berkelanjutan</b></div>
+      <div class="plan-owner">Marketing / Manajemen<b>Prioritas Sedang</b></div>
+    </div>
+
+    <div class="plan-item p3">
+      <div class="plan-num">09</div>
+      <div>
+        <div class="plan-title">Jawab tema harga/promo dan variasi menu dari pelanggan</div>
+        <div class="plan-desc">Promo &amp; sensitivitas harga (22 ulasan) dan permintaan variasi menu (15) muncul berulang. Pertimbangkan bundling berkala bertarget (bukan potongan harga yang menambah diskon), evaluasi harga cake/tart, dan kumpulkan saran varian sebagai bahan ide produk.</div>
+      </div>
+      <div class="plan-owner">Manajemen / Produk<b>Prioritas Sedang</b></div>
     </div>
   </div>
 </section>
 
 <footer class="wrap">
   <div class="foot-grid">
-    <span>Onty Command Center · Super Dashboard v1 · Dibuat Juli 2026</span>
-    <span>Sumber: dashboard Penjualan, Sosial Media, Marketing, HR, AI Studio, Kepuasan Pelanggan — <a href="https://github.com/muslihm3" target="_blank" rel="noopener">github.com/muslihm3</a></span>
+    <span>Onty Command Center · Super Dashboard v1 · Dibuat Juli 2026 · Update Oktober 2026</span>
+    <span>Sumber: dashboard Penjualan, Sosial Media, Marketing, HR, AI Studio, Kepuasan Pelanggan, Keuangan — <a href="https://github.com/muslihm3" target="_blank" rel="noopener">github.com/muslihm3</a></span>
   </div>
 </footer>
 
